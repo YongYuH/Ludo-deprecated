@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* top nav bar */
+.ui.top.menu {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 13%;
+    background-color: #36ABCB;
+}
+
+.top-menu-element {
+    position: relative;
+    padding-left: 1%;
+    height: 100%;
+}
+
+.Ludo-logo {
+    height: 100%;
+    padding-left: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.schematics {
+    left: 6%;
+}
+
+.schematic-icon {
+    position: absolute;
+    margin-top: 90%;
+    margin-left: 20%;
+    padding-top: 50%;
+    border-top: 0px;
+    height: 100%;
+    max-width: 80px;
+}
+
+.win-rate {
+    position: absolute;
+    right: 15%;
+    margin-top: 0px;
+    padding-top: 0px;
+    content: attr(data-pct)"%";
+    text-align: center;
+    color: #FFFFFF;
+    height: 100%;
+}
+    .win-rate__number {
+        position: relative;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        top: 25%;
+        margin: 0 auto;
+        color: black;position: absolute;
+    }
+    .win-rate__svg {
+        position: relative;
+        z-index: 2;
+        right: 0;
+    }
+    .win-rate__circle {
+        fill: #36ABCB;
+        stroke: #FF9F1E;
+        stroke-width: 7px;
+    }
+
+.finish-rate {
+    position: absolute;
+    right: 8.5%;
+    margin-top: 0px;
+    padding-top: 0px;
+    content: attr(data-pct)"%";
+    text-align: center;
+    color: #FFFFFF;
+    height: 100%;
+}
+    .finish-rate__number {
+        position: relative;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        top: 25%;
+        margin: 0 auto;
+        color: black;position: absolute;
+    }
+    .finish-rate__svg {
+        position: relative;
+        z-index: 2;
+        right: 0;
+    }
+    .finish-rate__circle {
+        fill: #36ABCB;
+        stroke: #FF9F1E;
+        stroke-width: 7px;
+    }
+/* end of top nav bar */
+
+
+
+
+/* right nav bar */
+.ui.right.menu {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: 0;
+    height: 87%;
+    width: 6%;
+    background-color: #3B3B3B;
+}
+
+.right-menu-element {
+    position: absolute;
+    width: 100%;
+}
+
+.profile-img {
+    border-radius: 40px;
+    margin-top: 0px;
+    padding: 3%;
+    height: 80px;
+}
+
+.icon-ludoing {
+    position: absolute;
+    top: 80px;
+    height: 80px;
+    margin-top: 0;
+    margin-left: 10%;
+    padding-top: 20%;
+}
+
+.icon-following {
+    position: absolute;
+    top: 160px;
+    height: 80px;
+    margin-top: 0;
+    margin-left: 10%;
+    padding-top: 20%;
+}
+/* end of right nav bar */
