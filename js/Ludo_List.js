@@ -1,4 +1,4 @@
 $(document).ready(function() {
-    var $circle = $('circle.outer');
-    $circle.css({ strokeDashoffset: 20 });
+    // var $circle = $('circle.outer');
+    // $circle.css({ strokeDashoffset: 20 });
 })

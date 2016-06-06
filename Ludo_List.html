@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="css/Ludo_List.css">
     <script src="js/jquery-2.1.4.min.js"></script>
@@ -13,48 +14,107 @@
 
 <body>
     <nav class="top-nav">
-        <a href="" class="top-menu-element">
-            <img class="Ludo-logo" src="images/light_bulb.png" />
-        </a>
-        <a href="" class="top-menu-element schematics">
-            <i class="circular big tasks icon schematic-icon"></i>
-        </a>
-        <span class="top-menu-element win-rate" data-pct="20">
+        <div class="logo-div">
+            <div class="Ludo-logo-div">
+                <a href="">
+                    <img class="Ludo-logo" src="images/light_bulb.png" />
+                </a>
+            </div>
+            <div class="schematic-icon-div">
+                <a href="">
+                    <img class="schematic-icon" src="images/120__application.svg" />
+                </a>
+            </div>
+        </div>
+        <div class="rate-div">
+        <span class="win-rate" data-pct="20">
             <svg class="win-rate__svg" width="80px" height="100%">
                 <circle 
                     class="win-rate__circle" 
                     cx="50%" cy="50%" r="35" stroke-dasharray="251.33" stroke-dashoffset="0">
                 </circle>
-                <text class="win-rate__number" x="33%" y="44%">勝率</text>
+                <text class="win-rate__number" x="32%" y="45%">勝率</text>
                 <text class="win-rate__number" x="30%" y="66%">100%</text>
             </svg>
         </span>
-        <span class="top-menu-element finish-rate" data-pct="20">
+        <span class="finish-rate" data-pct="20">
             <svg class="finish-rate__svg" width="80px" height="100%">
                 <circle 
                     class="finish-rate__circle" 
                     cx="50%" cy="50%" r="35" stroke-dasharray="251.33" stroke-dashoffset="0">
                 </circle>
-                <text class="finish-rate__number" x="25%" y="44%">達成率</text>
+                <text class="finish-rate__number" x="25%" y="45%">達成率</text>
                 <text class="finish-rate__number" x="30%" y="66%">100%</text>
             </svg>
         </span>
+        </div>
     </nav>
     <nav class="right-sidebar">
-        <a href="" class="right-menu-element">
-            <img class="profile-img" src="images/thailand_girl.jpg" />
-        </a>
-        <a href="" class="right-menu-element">
-            <div class="ludoing-icon-div">
-                <i class="huge calendar icon ludoing"></i>
-            </div>
-        </a>
-        <a href="" class="right-menu-element">
-            <div class="following-icon-div">
-                <i class="huge users icon following"></i>
-            </div>
-        </a>
+        <ul>
+            <li class="color-sidebar1">
+                <a href="">
+                    <img class="profile-img" src="images/thailand_girl.jpg" />
+                </a>
+            </li>
+            <li class="color-sidebar2">
+                <a href="">
+                    <div class="ludoing-icon-div">
+                        <img class="ludoing-icon" src="images/065__calendar.svg"/>
+                    </div>
+                </a>
+            </li>
+            <li class="color-sidebar3">
+                <a href="">
+                    <div class="following-icon-div">
+                        <img class="following-icon" src="images/106__team.svg"/>
+                    </div>
+                </a>
+            </li>
+            <li class="color-sidebar4"><a href=""></a></li>
+            <li class="color-sidebar5"><a href=""></a></li>
+            <li class="color-sidebar6"><a href=""></a></li>
+            <li class="color-sidebar7"><a href=""></a></li>
+            <li class="color-sidebar8"><a href=""></a></li>
+        </ul>
     </nav>
+    <section class="main">
+        <div class="content-div">
+            <div class="ui grid top-content">
+               <div class="three wide column card">card1</br>card1</br>card1</br>card1</div>
+               <div class="three wide column card">card2</br>card2</br>card2</div>
+               <div class="three wide column card">card3</br>card3</br>card3</br>card3</br>card3</div>
+               <div class="three wide column card">card4</br>card4</div>
+               <div class="three wide column card">card5</div>
+           </div>
+        </div>
+        <div class="content-div">
+            <div class="ui grid content">
+                <div class="three wide column card">card1</br>card1</br>card1</br>card1</div>
+                <div class="three wide column card">card2</br>card2</br>card2</div>
+                <div class="three wide column card">card3</br>card3</br>card3</br>card3</br>card3</div>
+                <div class="three wide column card">card4</br>card4</div>
+                <div class="three wide column card">card5</div>
+            </div>
+        </div>
+        <div class="content-div">
+            <div class="ui grid content">
+                <div class="three wide column card">card1</br>card1</br>card1</br>card1</div>
+                <div class="three wide column card">card2</br>card2</br>card2</div>
+                <div class="three wide column card">card3</br>card3</br>card3</br>card3</br>card3</div>
+                <div class="three wide column card">card4</br>card4</div>
+                <div class="three wide column card">card5</div>
+            </div>
+        </div>
+        <div class="content-div">
+            <div class="ui grid content">
+                <div class="three wide column card">card1</br>card1</br>card1</br>card1</div>
+                <div class="three wide column card">card2</br>card2</br>card2</div>
+                <div class="three wide column card">card3</br>card3</br>card3</br>card3</br>card3</div>
+                <div class="three wide column card">card4</br>card4</div>
+                <div class="three wide column card">card5</div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

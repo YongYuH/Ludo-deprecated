@@ -4,6 +4,55 @@
     list-style: none;
 }
 
+/* main content */
+.main {
+    position: relative;
+    top: 87px;
+}
+    .content-div {
+        width: 94%;
+    }
+    .ui.grid.top-content {
+        margin: 0 10px;
+    }
+    .ui.grid.content {
+        margin: 0.5% 10px;
+    }
+    .content-card {
+        margin-top: 1%;
+        margin-right: 3.1%;
+        margin-bottom: 1%;
+        margin-left: 3.1%;
+        border-style: solid;
+        text-align: center;
+        overflow: scroll;
+    }
+    
+
+.card {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 300px;
+    width: 300px;
+    background-color: #fff;
+          box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    margin-top: 1%;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+    .card:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        transition:0.3s;
+    }
+/* end of main content */
 
 /* top nav bar */
 .top-nav {
@@ -15,31 +64,59 @@
     background-color: #36ABCB;
 }
 
-.top-menu-element {
-    position: fixed;
-    z-index: 2;
-    height: 87px;
-    max-width: 80px;
-}
-
-.Ludo-logo {
+.logo-div {
+    float: left;
     height: 100%;
-    width: 100%;
-    max-width: 100%;
-    padding: 5%;
+    width: 50%;
 }
+    .Ludo-logo-div {
+        position: relative;
+        float: left;
+        height: 100%;
+        width: 100%;
+        max-width: 87px;
+        z-index: 2;
+        padding: 0.8%;
+    }
+    .Ludo-logo {
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
 
-.schematics {
-    left: 18%;
-    margin-top: 1.5%;
+    .schematic-icon-div {
+        position: relative;
+        float: left;
+        height: 100%;
+        max-height: 87px;
+        max-width: 87px;
+        z-index: 2;
+        margin-left: 15%;
+    }
+        .schematic-icon {
+            padding-left: 2.5%;
+            height: 65px;
+            margin: 10px 0px;
+            border: 5px;
+            border-style: solid;
+            border-radius: 50%;
+        }
+
+.rate-div {
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 50%;
 }
 
 .win-rate {
-    right: 15.5%;
+    float: right;
+    height: 100%;
+    margin-right: 20%;
 }
     .win-rate__number {
         z-index: 3;
-        top: 25%;
+        top: 33%;
         left: 25%;
         color: black;
         text-align: center;
@@ -56,7 +133,8 @@
     }
 
 .finish-rate {
-    right: 7%;
+    float: right;
+    height: 100%;
 }
     .finish-rate__number {
         z-index: 3;
@@ -88,49 +166,85 @@
     z-index: 0;
     height: 100%;
     width: 6%;
-    background-color: #3B3B3B;
+    background-color: #36ABCB;
 }
 
-.right-menu-element {
-    position: fixed;
-    right: 0;
-    max-width: 6%;
-    z-index: 2;
-    height: 87px;
-    width: 100%;
-}
-
-.profile-img {
-    padding: 5%;
-    height: 87px;
-    max-width: 100%;
-    border-radius: 50%;
-    //background-color: #F2B701;
-}
-
-.ludoing-icon-div {
+.color-sidebar1 {
     position: absolute;
-    right: 0;
+    height: 87px;
+    background-color: #F2B701;
+}
+    .profile-img {
+        z-index: 3;
+        padding: 5%;
+        height: 87px;
+        max-width: 100%;
+        border-radius: 50%;
+    }
+
+.color-sidebar2 {
+    position: relative;
     top: 87px;
-    width: 100%;
-    padding-top: 10%;
-    padding-left: 10%;
+    height: 87px;
+    background-color: #E57D04;
 }
-    i.ludoing {
-        margin: 0;
-        padding: 0;
+    .ludoing-icon-div {
+        position: relative;
+    }
+    .ludoing-icon {
+        max-width:100%;
+        max-height:100%;
     }
 
-.following-icon-div {
-    position: absolute;
-    right: 0;
-    top: 160px;
-    width: 100%;
-    padding-top: 10%;
-    padding-left: 10%;
+.color-sidebar3 {
+    position: relative;
+    top: 87px;
+    height: 87px;
+    background-color: #DC0030;
 }
-    i.following {
-        margin: 0;
-        padding: 0;
+    .following-icon-div {
+        position: relative;
     }
+    .following-icon {
+        max-width:100%;
+        max-height:100%;
+    }
+
+.color-sidebar4 {
+    position: relative;
+    top: 87px;
+    height: 87px;
+    background-color: #B10058;
+}
+
+.color-sidebar5 {
+    position: relative;
+    top: 87px;
+    height: 87px;
+    background-color: #7C378A;
+}
+
+.color-sidebar6 {
+    position: relative;
+    top: 87px;
+    height: 87px;
+    background-color: #3465AA;
+}
+
+.color-sidebar7 {
+    position: relative;
+    top: 87px;
+    height: 87px;
+    background-color: #09A275;
+}
+
+.color-sidebar8 {
+    position: relative;
+    top: 87px;
+    height: 87px;
+    background-color: #7CB854;
+}
+
 /* end of right nav bar */
+
+
