@@ -12,53 +12,47 @@
 </head>
 
 <body>
-    <nav class="ui top menu">
+    <nav class="top-nav">
         <a href="" class="top-menu-element">
-            <img class="top-menu-element Ludo-logo" src="images/light_bulb.png" />
+            <img class="Ludo-logo" src="images/light_bulb.png" />
         </a>
         <a href="" class="top-menu-element schematics">
-            <span class="top-menu-element schematic-icon">
-                <i class="circular big tasks icon"></i>
-            </span>
+            <i class="circular big tasks icon schematic-icon"></i>
         </a>
-        <div class="win-rate" data-pct="20">
-            <div class="win-rate win-rate__number">
-                <h6>勝率</h6>
-                <p>100%</p>
-            </div>
-            <svg class="win-rate win-rate__svg" width="80px" height="80px">
+        <span class="top-menu-element win-rate" data-pct="20">
+            <svg class="win-rate__svg" width="80px" height="100%">
                 <circle 
-                    class="win-rate win-rate__circle" 
+                    class="win-rate__circle" 
                     cx="50%" cy="50%" r="35" stroke-dasharray="251.33" stroke-dashoffset="0">
                 </circle>
+                <text class="win-rate__number" x="33%" y="44%">勝率</text>
+                <text class="win-rate__number" x="30%" y="66%">100%</text>
             </svg>
-        </div>
-        <div class="finish-rate" data-pct="20">
-            <div class="finish-rate finish-rate__number">
-                <h6>達成率</h6>
-                <p>100%</p>
-            </div>
-            <svg class="finish-rate finish-rate__svg" width="80px" height="80px">
+        </span>
+        <span class="top-menu-element finish-rate" data-pct="20">
+            <svg class="finish-rate__svg" width="80px" height="100%">
                 <circle 
-                    class="finish-rate finish-rate__circle" 
+                    class="finish-rate__circle" 
                     cx="50%" cy="50%" r="35" stroke-dasharray="251.33" stroke-dashoffset="0">
                 </circle>
+                <text class="finish-rate__number" x="25%" y="44%">達成率</text>
+                <text class="finish-rate__number" x="30%" y="66%">100%</text>
             </svg>
-        </div>
+        </span>
     </nav>
-    <nav class="ui right menu">
+    <nav class="right-sidebar">
         <a href="" class="right-menu-element">
-            <img class="right-menu-element profile-img" src="images/thailand_girl.jpg" />
+            <img class="profile-img" src="images/thailand_girl.jpg" />
         </a>
         <a href="" class="right-menu-element">
-            <span class="right-menu-element icon-ludoing">
-                <i class="huge calendar icon"></i>
-            </span>
+            <div class="ludoing-icon-div">
+                <i class="huge calendar icon ludoing"></i>
+            </div>
         </a>
         <a href="" class="right-menu-element">
-            <span class="right-menu-element icon-following">
-                <i class="huge users icon"></i>
-            </span>
+            <div class="following-icon-div">
+                <i class="huge users icon following"></i>
+            </div>
         </a>
     </nav>
 </body>

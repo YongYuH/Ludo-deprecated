@@ -6,97 +6,71 @@
 
 
 /* top nav bar */
-.ui.top.menu {
+.top-nav {
     position: fixed;
     top: 0;
     z-index: 1;
     width: 100%;
-    height: 13%;
+    height: 87px;
     background-color: #36ABCB;
 }
 
 .top-menu-element {
-    position: relative;
-    padding-left: 1%;
-    height: 100%;
+    position: fixed;
+    z-index: 2;
+    height: 87px;
+    max-width: 80px;
 }
 
 .Ludo-logo {
     height: 100%;
-    padding-left: 0;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    width: 100%;
+    max-width: 100%;
+    padding: 5%;
 }
 
 .schematics {
-    left: 6%;
-}
-
-.schematic-icon {
-    position: absolute;
-    margin-top: 90%;
-    margin-left: 20%;
-    padding-top: 50%;
-    border-top: 0px;
-    height: 100%;
-    max-width: 80px;
+    left: 18%;
+    margin-top: 1.5%;
 }
 
 .win-rate {
-    position: absolute;
-    right: 15%;
-    margin-top: 0px;
-    padding-top: 0px;
-    content: attr(data-pct)"%";
-    text-align: center;
-    color: #FFFFFF;
-    height: 100%;
+    right: 15.5%;
 }
     .win-rate__number {
-        position: relative;
-        left: 0;
-        right: 0;
         z-index: 3;
         top: 25%;
-        margin: 0 auto;
-        color: black;position: absolute;
+        left: 25%;
+        color: black;
+        text-align: center;
     }
     .win-rate__svg {
-        position: relative;
         z-index: 2;
         right: 0;
     }
     .win-rate__circle {
+        z-index: 2;
         fill: #36ABCB;
         stroke: #FF9F1E;
         stroke-width: 7px;
     }
 
 .finish-rate {
-    position: absolute;
-    right: 8.5%;
-    margin-top: 0px;
-    padding-top: 0px;
-    content: attr(data-pct)"%";
-    text-align: center;
-    color: #FFFFFF;
-    height: 100%;
+    right: 7%;
 }
     .finish-rate__number {
-        position: relative;
-        left: 0;
-        right: 0;
         z-index: 3;
         top: 25%;
-        margin: 0 auto;
-        color: black;position: absolute;
+        left: 30%;
+        color: black;
+        text-align: center;
     }
     .finish-rate__svg {
-        position: relative;
         z-index: 2;
         right: 0;
     }
     .finish-rate__circle {
+        z-index: 2;
         fill: #36ABCB;
         stroke: #FF9F1E;
         stroke-width: 7px;
@@ -106,45 +80,57 @@
 
 
 
-/* right nav bar */
-.ui.right.menu {
+/* right sidebar */
+.right-sidebar {
     position: fixed;
+    top: 87px;
     right: 0;
-    bottom: 0;
     z-index: 0;
-    margin: 0;
-    height: 87%;
+    height: 100%;
     width: 6%;
     background-color: #3B3B3B;
 }
 
 .right-menu-element {
-    position: absolute;
+    position: fixed;
+    right: 0;
+    max-width: 6%;
+    z-index: 2;
+    height: 87px;
     width: 100%;
 }
 
 .profile-img {
-    border-radius: 40px;
-    margin-top: 0px;
-    padding: 3%;
-    height: 80px;
+    padding: 5%;
+    height: 87px;
+    max-width: 100%;
+    border-radius: 50%;
+    //background-color: #F2B701;
 }
 
-.icon-ludoing {
+.ludoing-icon-div {
     position: absolute;
-    top: 80px;
-    height: 80px;
-    margin-top: 0;
-    margin-left: 10%;
-    padding-top: 20%;
+    right: 0;
+    top: 87px;
+    width: 100%;
+    padding-top: 10%;
+    padding-left: 10%;
 }
+    i.ludoing {
+        margin: 0;
+        padding: 0;
+    }
 
-.icon-following {
+.following-icon-div {
     position: absolute;
+    right: 0;
     top: 160px;
-    height: 80px;
-    margin-top: 0;
-    margin-left: 10%;
-    padding-top: 20%;
+    width: 100%;
+    padding-top: 10%;
+    padding-left: 10%;
 }
+    i.following {
+        margin: 0;
+        padding: 0;
+    }
 /* end of right nav bar */
