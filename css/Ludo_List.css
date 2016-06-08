@@ -4,14 +4,18 @@
     list-style: none;
 }
 
+body {
+    background-color: #E8EBED;
+}
+
 /* top nav bar */
 .top-nav {
     position: fixed;
     top: 0;
     z-index: 1;
     width: 100%;
-    height: 87px;
-    background-color: #36ABCB;
+    height: 16%;
+    background-color: #FFFFFF;
 }
 
 .logo-div {
@@ -23,33 +27,37 @@
         position: relative;
         float: left;
         height: 100%;
-        width: 100%;
-        max-width: 87px;
+        width: 50%;
         z-index: 2;
-        padding: 0.8%;
+        padding: 2%;
+        padding-left: 2.5%;
     }
     .Ludo-logo {
         height: 100%;
-        width: 100%;
         z-index: 2;
+    }
+    .Ludo-logo-text {
+        font-size: 250%;
+        color: #000000;
     }
 
     .schematic-icon-div {
         position: relative;
         float: left;
         height: 100%;
-        max-height: 87px;
-        max-width: 87px;
         z-index: 2;
-        margin-left: 15%;
     }
         .schematic-icon {
-            padding-left: 2.5%;
-            height: 65px;
-            margin: 10px 0px;
-            border: 5px;
+            height: 75%;
             border-style: solid;
+            border-width: 1px;
+            border-color: #D8DDE4;
             border-radius: 50%;
+            background-color: #FFFC79;
+            background-image: url('../images/playground_icon.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
 
 .rate-div {
@@ -62,7 +70,6 @@
 .win-rate {
     float: right;
     height: 100%;
-    margin-right: 20%;
 }
     .win-rate__number {
         z-index: 3;
@@ -77,14 +84,15 @@
     }
     .win-rate__circle {
         z-index: 2;
-        fill: #36ABCB;
-        stroke: #FF9F1E;
-        stroke-width: 7px;
+        fill: #FFFFFF;
+        stroke: #000000;
+        stroke-width: 4px;
     }
 
 .finish-rate {
     float: right;
     height: 100%;
+    margin-right: 2%;
 }
     .finish-rate__number {
         z-index: 3;
@@ -99,9 +107,18 @@
     }
     .finish-rate__circle {
         z-index: 2;
-        fill: #36ABCB;
-        stroke: #FF9F1E;
-        stroke-width: 7px;
+        fill: #FFFFFF;
+        stroke: #000000;
+        stroke-width: 4px;
+    }
+
+.clock-icon-div{
+    float: right;
+    height: 100%;
+    padding: 2%;
+}
+    .clock-icon {
+        height: 100%;
     }
 
 /* end of top nav bar */
@@ -109,172 +126,117 @@
 
 
 
-/* toggled right sidebar */
-.sidebar-arrow-div {
-    position: fixed;
-    z-index: 5;
-    top: 58%;
-    right: 5%;
-    width: 80px;
-}
-    .sidebar-arrow {
-        position: relative;
-        float: right;
-        z-index: 4;
-        height: 40%;
-        width: 40%;
-        border-style: solid;
-        background-color: #36ABCB;
-        border-radius: 50%;
-    }
-    .sidebar-arrow:hover {
-            background-color: #09A275;
-            transition: 0.3s;
-    }
-
-#sidebar_toggle:checked {
-    transition-duration: s;
-}
-
-#sidebar_toggle:checked + label .right-sidebar {
-    position: fixed;
-    top: 87px;
-    right: 0;
-    z-index: 1;
-    height: 100%;
-    width: 26%;
-    background-color: #36ABCB;
-    transition-duration: 0.3s;
-}
-
-#sidebar_toggle:checked + label .sidebar-arrow-div {
-    position: fixed;
-    top: 58%;
-    right: 24.5%;
-    width: 80px;
-    transition-duration: 0.3s;
-}
-    #sidebar_toggle:checked + label .sidebar-arrow {
-            position: relative;
-            float: right;
-            z-index: 4;
-            width: 40%;
-            height: 40%;
-            border-style: solid;
-            background-color: #36ABCB;
-            border-radius: 50%;
-            transform: rotate(180deg);
-    }
-    #sidebar_toggle:checked + label .sidebar-arrow:hover {
-            background-color: #09A275;
-            transition: 0.2s;
-    }
-
-#sidebar_toggle:checked + label .profile-img {
-    z-index: 3;
-    padding: 1%;
-    height: 87px;
-    width: 87px;
-    border-radius: 50%;
-}
-
-#sidebar_toggle:checked + label .ludoing-icon-div {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-#sidebar_toggle:checked + label .ludoing-icon {
-    float: left;
-    width: 25%;
-    height: 100%;
-}
-
-#sidebar_toggle:checked + label .following-icon-div {
-        position: relative;
-        width: 100%;
-        height: 100%;
-}
-
-#sidebar_toggle:checked + label .following-icon {
-        width: 25%;
-        height: 100%;
-}
-
-/* end of toggle right sidebar */
-
-
-
 
 /* right sidebar */
 .right-sidebar {
     position: fixed;
-    top: 87px;
+    top: 16%;
     right: 0;
-    z-index: 0;
-    height: 100%;
-    width: 6%;
-    background-color: #36ABCB;
-    transition-duration: 0.2s;
+    z-index: 1;
+    height: 84%;
+    width: 10%;
+    transition-duration: 1s;
 }
 
 .right-sidebar-element {
     position: relative;
-    height: 87px;
+    height: 16.7%;
+    width: 100%;
+    border-color: #FFFFFF;
 }
+    .right-sidebar-element img {
+        width: 100%;
+    }
 
 .color-sidebar1 {
-    background-color: #F2B701;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    background-color: #FFFC79;
 }
-    .profile-img {
-        z-index: 3;
-        padding: 5%;
-        height: 87px;
-        max-width: 100%;
-        border-radius: 50%;
+    .playground-icon {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/playground_icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
 .color-sidebar2 {
-    background-color: #E57D04;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    background-color: #FFD479;
 }
-    .ludoing-icon-div {
-        position: relative;
-    }
-    .ludoing-icon {
-        max-width:100%;
-        max-height:100%;
+    .profile-icon {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/profile_icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
 .color-sidebar3 {
-    background-color: #DC0030;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    background-color: #FF7E79;
 }
-    .following-icon-div {
-        position: relative;
-    }
-    .following-icon {
-        max-width:100%;
-        max-height:100%;
+    .start-ludo-icon {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/start_ludo_icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
 .color-sidebar4 {
-    background-color: #B10058;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    background-color: #D783FF;
 }
+    .freinds-icon {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/ludo_friends_icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
 .color-sidebar5 {
-    background-color: #7C378A;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    background-color: #76D6FF;
 }
+    .ludo-sports-icon {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/ludo_sports_icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
 .color-sidebar6 {
-    background-color: #3465AA;
+    width: 100%;
+    height: 100%;
+    padding: 6%;
+    background-color: #73FA79;
 }
-
-.color-sidebar7 {
-    background-color: #09A275;
-}
-
-.color-sidebar8 {
-    background-color: #7CB854;
-}
+    .ludo-read-icon {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/ludo_read_icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
 /* end of right nav bar */
 
@@ -285,61 +247,56 @@
 .main {
     z-index: 0;
     position: absolute;
-    top: 87px;
-    width: 94%;
-    height: 90%;
-}
-
-.content {
-    margin: 0.5% 10px;
-    overflow: hidden;
-}
-
-.content-card {
-    margin-top: 1%;
-    margin-right: 3.1%;
-    margin-bottom: 1%;
-    margin-left: 3.1%;
-    border-style: solid;
-    text-align: center;
-    overflow: scroll;
+    top: 16%;
+    width: 90%;
+    margin-top: 1.5%;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
 .column1,
 .column2,
 .column3,
-.column4,
-.column5 {
+.column4 {
     float: left;
     display: inline-flex;
-    width: 17%;
+    width: 25%;
 }
 
 .card {
     position: relative;
-    height: 100%;
-    margin: 1% 16px;
-    background-color: #fff;
+    width: 100%;
+    margin: 1% 3%;
+    background-color: #FFFFFF;
           box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
      -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
     border-radius: 10px;
-    overflow: hidden;
     text-align: center;
 }
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         transition: 0.3s;
     }
-    .card-image {
+    .card-content {
         position: relative;
-        width: 100%;
     }
-    .card-text {
+    .card-icon-div {
         position: relative;
-        right: 100%;
-        margin-top: 100%;
-        padding-left: 40%;
+        padding-top: 1%;
+        border-style: solid;
+        border-width: 3px;
+        border-color: #DCE1E7;
+        border-radius: 10px;
     }
+    .card-icon {
+        position: relative;
+        left: 3%;
+        width: 20%;
+    }
+        .card-icon img {
+            width: 100%;
+            border-radius: 50%;
+        }
 
 /* end of main content */
