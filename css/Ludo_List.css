@@ -205,10 +205,11 @@
 
 /* main content */
 .main {
-    z-index: 3;
+    z-index: 0;
     position: absolute;
     top: 87px;
     width: 94%;
+    height: 90%;
 }
 
 .content {
