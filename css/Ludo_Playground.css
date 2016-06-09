@@ -45,6 +45,7 @@ table {
 
 body {
     background-color: #E8EBED;
+    font-family: arial;
 }
 
 /* top nav bar */
@@ -109,63 +110,48 @@ body {
     height: 100%;
     width: 50%;
 }
-
-.win-rate {
-    float: right;
-    height: 100%;
-}
-    .win-rate__number {
-        z-index: 3;
-        top: 33%;
-        left: 25%;
-        color: black;
-        text-align: center;
-        font-size:15px;
-    }
-    .win-rate__svg {
-        z-index: 2;
-        right: 0;
-    }
-    .win-rate__circle {
-        z-index: 2;
-        fill: #FFFFFF;
-        stroke: #000000;
-        stroke-width: 4px;
-    }
-
-.finish-rate {
-    float: right;
-    height: 100%;
-    margin-right: 2%;
-}
-    .finish-rate__number {
-        z-index: 3;
-        top: 25%;
-        left: 30%;
-        color: black;
-        text-align: center;
-        font-size: 15px;
-    }
-    .finish-rate__svg {
-        z-index: 2;
-        right: 0;
-    }
-    .finish-rate__circle {
-        z-index: 2;
-        fill: #FFFFFF;
-        stroke: #000000;
-        stroke-width: 4px;
-    }
-
-.clock-icon-div{
-    float: right;
-    height: 100%;
-    padding: 2%;
-}
-    .clock-icon {
+    .personal-data {
+        float: right;
         height: 100%;
     }
+        .pesonal-data__svg {
+            z-index: 2;
+            right: 0;
+        }
+        .pesonal-data__circle {
+            z-index: 2;
+            fill: #FFFFFF;
+            stroke: #000000;
+            stroke-width: 4px;
+        }
+        .pesonal-data__number {
+            z-index: 3;
+            color: black;
+            text-align: center;
+            font-size: 15px;
+        }
 
+    .clock-icon-div {
+        float: right;
+        height: 100%;
+        padding: 2%;
+    }
+        .clock-icon {
+            height: 100%;
+        }
+
+    .win-rate__number {
+        top: 33%;
+        left: 25%;
+    }
+
+    .finish-rate {
+        margin-right: 2%;
+    }
+        .finish-rate__number {
+            top: 25%;
+            left: 30%;
+        }
 /* end of top nav bar */
 
 
@@ -183,104 +169,62 @@ body {
     transition-duration: 1s;
 }
 
-.right-sidebar-element {
+.right-sidebar-item {
     position: relative;
     height: 16.7%;
     width: 100%;
     border-color: #FFFFFF;
 }
-    .right-sidebar-element img {
-        width: 100%;
-    }
-
-.color-sidebar1 {
-    width: 100%;
-    height: 100%;
-    padding: 6%;
-    background-color: #FFFC79;
-}
-    .playground-icon {
+    .right-sidebar-item__icon {
         height: 100%;
-        width: 100%;
-        background-image: url('../images/playground_icon.png');
+        width: 40%;
+        margin:0 auto;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+    }
+    
+.color-sidebar1 {
+    background-color: rgb(255, 252, 121);
+}
+    .playground-icon {
+        background-image: url('../images/playground_icon.png');
     }
 
 .color-sidebar2 {
-    width: 100%;
-    height: 100%;
-    padding: 6%;
     background-color: #FFD479;
 }
     .profile-icon {
-        height: 100%;
-        width: 100%;
         background-image: url('../images/profile_icon.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
 .color-sidebar3 {
-    width: 100%;
-    height: 100%;
-    padding: 6%;
     background-color: #FF7E79;
 }
     .start-ludo-icon {
-        height: 100%;
-        width: 100%;
         background-image: url('../images/start_ludo_icon.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
 .color-sidebar4 {
-    width: 100%;
-    height: 100%;
-    padding: 6%;
     background-color: #D783FF;
 }
     .freinds-icon {
-        height: 100%;
-        width: 100%;
         background-image: url('../images/ludo_friends_icon.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
 .color-sidebar5 {
-    width: 100%;
-    height: 100%;
-    padding: 6%;
     background-color: #76D6FF;
 }
     .ludo-sports-icon {
-        height: 100%;
-        width: 100%;
+        width: 27%;
         background-image: url('../images/ludo_sports_icon.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
 .color-sidebar6 {
-    width: 100%;
-    height: 100%;
-    padding: 6%;
     background-color: #73FA79;
 }
     .ludo-read-icon {
-        height: 100%;
-        width: 100%;
         background-image: url('../images/ludo_read_icon.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
 /* end of right nav bar */
@@ -294,9 +238,10 @@ body {
     position: absolute;
     top: 16%;
     width: 90%;
-    margin-top: 1.5%;
+    margin-top: 0.8%;
     padding-right: 2%;
     padding-left: 2%;
+    margin-left: 5%
 }
 
 .column {
@@ -317,10 +262,10 @@ body {
     width: 100%;
     margin: 1% 3%;
     background-color: #FFFFFF;
-          box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
-    border-radius: 8px;
+          box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+     -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
     text-align: center;
 }
     .card:hover {

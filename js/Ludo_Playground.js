@@ -5,9 +5,6 @@ $(document).ready(function() {
     $('.column3').css('left', '50%');
     $('.column4').css('left', '75%');
 
-    var main = $('.main');
-    var total_post = main.children().length;
-
     var total_column = 4;
     var total_height_of_column = new Array(total_column); 
 
@@ -19,6 +16,9 @@ $(document).ready(function() {
     var post = 0;
     var post_height = 0;
 
+    var main = $('.main');
+    var total_post = main.children().length;
+
     for (var i = 0; i < total_post; i++) {
         // get height of post
         post = main.children().eq(i);
@@ -28,19 +28,19 @@ $(document).ready(function() {
         switch (i%total_column) {
             case 0:
                 $('.post-'+i).css('top', total_height_of_column[0]);
-                total_height_of_column[0] = total_height_of_column[0] + post_height+30;
+                total_height_of_column[0] = total_height_of_column[0] + post_height;
                 break;
             case 1:
                 $('.post-'+i).css('top', total_height_of_column[1]);
-                total_height_of_column[1] = total_height_of_column[1] + post_height+30;
+                total_height_of_column[1] = total_height_of_column[1] + post_height;
                 break;
             case 2:
                 $('.post-'+i).css('top', total_height_of_column[2]);
-                total_height_of_column[2] = total_height_of_column[2] + post_height+30;
+                total_height_of_column[2] = total_height_of_column[2] + post_height;
                 break;
             case 3:
                 $('.post-'+i).css('top', total_height_of_column[3]);
-                total_height_of_column[3] = total_height_of_column[3] + post_height+30;
+                total_height_of_column[3] = total_height_of_column[3] + post_height;
                 break;
         }
         console.log(total_height_of_column);
