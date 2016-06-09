@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
     // positioning 4 column-x axis
     $('.column1').css('left', '0');
     $('.column2').css('left', '25%');
