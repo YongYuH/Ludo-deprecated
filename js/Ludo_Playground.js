@@ -16,7 +16,7 @@ $(window).load(function() {
     var post = 0;
     var post_height = 0;
 
-    var main = $('.main');
+    var main = $('.main-content');
     var total_post = main.children().length;
 
     for (var i = 0; i < total_post; i++) {
@@ -43,7 +43,6 @@ $(window).load(function() {
                 total_height_of_column[3] = total_height_of_column[3] + post_height;
                 break;
         }
-        console.log(total_height_of_column);
     }
 })
 
