@@ -1,11 +1,27 @@
-$(window).load(function() {
-    // positioning 4 column-x axis
-    $('.column1').css('left', '0');
-    $('.column2').css('left', '25%');
-    $('.column3').css('left', '50%');
-    $('.column4').css('left', '75%');
+function card_based_content_responsive() {
+    var screen_width = $(window).width()
+    var total_column = 0;
+    switch (true) {
+        case screen_width >= 1285:
+            total_column = 6;
+            break;
+        case screen_width >= 1095:
+            total_column = 5;
+            break;
+        case screen_width >= 930:
+            total_column = 4;
+            break;
+        case screen_width >= 770:
+            total_column = 3;
+            break;
+        case screen_width >= 550:
+            total_column = 2;
+            break;
+        case screen_width < 550:
+            total_column = 1;
 
-    var total_column = 4;
+            break;
+    }
     var total_height_of_column = new Array(total_column); 
 
     // array initiation
@@ -15,34 +31,31 @@ $(window).load(function() {
 
     var post = 0;
     var post_height = 0;
+    var current_col = 0;
+    var current_left_distance = 0;
 
     var main = $('.main-content');
     var total_post = main.children().length;
 
-    for (var i = 0; i < total_post; i++) {
-        // get height of post
-        post = main.children().eq(i);
+    // positioning column
+    for (var post_num = 0; post_num < total_post; post_num++) {
+        current_col = post_num % total_column;
+
+        // x axis
+        current_left_distance = 100 / total_column * current_col + '%';
+        $('.column-' + post_num).css('left', current_left_distance);
+
+        // y axis
+        $('.post-'+post_num).css('top', total_height_of_column[current_col]);
+
+        // get height of current post
+        post = main.children().children().eq(post_num);
         post_height = post.height();
-
-        // positioning 4 column-y axis
-        switch (i%total_column) {
-            case 0:
-                $('.post-'+i).css('top', total_height_of_column[0]);
-                total_height_of_column[0] = total_height_of_column[0] + post_height;
-                break;
-            case 1:
-                $('.post-'+i).css('top', total_height_of_column[1]);
-                total_height_of_column[1] = total_height_of_column[1] + post_height;
-                break;
-            case 2:
-                $('.post-'+i).css('top', total_height_of_column[2]);
-                total_height_of_column[2] = total_height_of_column[2] + post_height;
-                break;
-            case 3:
-                $('.post-'+i).css('top', total_height_of_column[3]);
-                total_height_of_column[3] = total_height_of_column[3] + post_height;
-                break;
-        }
+        total_height_of_column[current_col] = total_height_of_column[current_col] + post_height + 10;
     }
-})
+}
 
+$(window).load(function() {
+    card_based_content_responsive();
+    $( window ).resize(card_based_content_responsive);
+})
