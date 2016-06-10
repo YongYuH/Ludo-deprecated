@@ -1,0 +1,159 @@
+@import "header";
+@import "right_sidebar";
+
+$right_sidebar_width: 100px;
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    background-color: #E8EBED;
+    font-family: arial;
+}
+
+/* main content */
+.main {
+    z-index: 0;
+    position: relative;
+    top: 16%;
+    width: 100%;
+    height: 100%;
+    padding-top: 14px;
+    padding-right: $right_sidebar_width;
+    
+    .main-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+
+        .column {
+            position: relative;
+            width: 167px;
+            height: auto;
+            margin-right: 10px;
+            margin-left: 10px;
+
+            // post
+            @for $i from 0 through 11 {
+                .post-#{$i} {
+                    position: absolute;
+                }
+            }
+
+            .card {
+                width: 100%;
+                background-color: #FFFFFF;
+                      box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+              -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+                 -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+                border-radius: 5px;
+                text-align: center;
+
+                .card:hover {
+                    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                    transition: 0.3s;
+                }
+
+                .card-message {
+                    position: relative;
+                    width: 100%;
+                    height: 50px;
+                    border-style: solid;
+                    border-width: 2px 0 0 0;
+                    border-color: #e8ebed;
+
+                    .card-icon {
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        width: 30px;
+                        height: 30px;
+
+                        background-position: center;
+                        background-color: #e8ebed;
+                        background-image: url('../images/ludo_read_icon.png');
+                        background-repeat: no-repeat;
+                        background-size: 60%;
+                        border-radius: 50%;
+                    }
+                    .card-door {
+                        position: absolute;
+                        top: 15px;
+                        left: 33px;
+                        width: 30px;
+                        height: 30px;
+
+                        background-position: center;
+                        //background-color: #e8ebed;
+                        background-image: url('../images/open-door.png');
+                        background-repeat: no-repeat;
+                        background-size: 50%;
+                        border-radius: 50%;
+                    }
+                    .card-pin {
+                        position: absolute;
+                        top: 15px;
+                        right: 0;
+                        width: 30px;
+                        height: 30px;
+
+                        background-position: center;
+                        //background-color: #e8ebed;
+                        background-image: url('../images/log-out.png');
+                        background-repeat: no-repeat;
+                        background-size: 50%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+/* end of main content */
+
+

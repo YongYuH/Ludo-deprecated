@@ -1,0 +1,134 @@
+/* header bar */
+.header-bar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 16%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(182,188,193);
+    background-color: #FFFFFF;
+
+    .logo-div {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+    
+        .Ludo-logo-div {
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            height: 100%;
+            padding: 18px 0px 18px 14px;
+        
+            .Ludo-logo {
+                height: 100%;
+                z-index: 2;
+            }
+            .Ludo-logo-text {
+                font-size: 130%;
+                font-weight: 500;
+                font-family: arial;
+                color: #000000;
+            }
+        }
+
+        .schematic-icon-div {
+            position: absolute;
+            display: inline-block;
+            left: 200px;
+            height: 100%;
+            width: 65px;
+            padding: 20px 0px 35px 0px;
+        
+            .schematic-icon-text {
+                font-size: 60%;
+            }
+            .schematic-icon {
+                height: 40px;
+                width: 40px;
+                margin: 0 auto;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #D8DDE4;
+                border-radius: 50%;
+                background-color: #FFFC79;
+                background-image: url('../images/playground_icon.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .rate-div {
+        position: relative;
+        display: inline-block;
+        right: 0;
+        float: right;
+        height: 100%;
+        width: 50%;
+
+        .clock-icon-div {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+
+            .clock-icon {
+                height: 50px;
+            }
+        }
+
+        .personal-data {
+            position: absolute;
+            height: 100%;
+
+            .pesonal-data__svg {
+                right: 0;
+            }
+            .pesonal-data__circle {
+                fill: #FFFFFF;
+                stroke-width: 10px;
+            }
+            .pesonal-data__number {
+                color: black;
+                text-align: center;
+                font-size: 15px;
+            }
+        }
+
+        .win-rate {
+            right: 80px;
+        
+            .win-rate__circle {
+                stroke: rgb(140, 200, 40);
+            }
+            .win-rate__text {
+                font-size: 75%;
+            }
+            .win-rate__number {
+                top: 33%;
+                left: 25%;
+            }
+        }
+
+        .finish-rate {
+            right: 150px;
+        
+            .finish-rate__circle {
+                stroke: rgb(255, 115, 20);
+            }
+            .finish-rate__text {
+                font-size: 65%;
+                color: rgb(255, 0, 0);
+                text-align: center;
+            }
+            .finish-rate__number {
+                top: 25%;
+                left: 30%;
+            }
+        }
+    }
+}
+/* end of header bar */
