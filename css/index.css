@@ -221,7 +221,7 @@
 }
 
 /* end of right nav bar */
-/* line 7, ../scss/index.scss */
+/* line 8, ../scss/index.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -244,48 +244,48 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-/* line 28, ../scss/index.scss */
+/* line 29, ../scss/index.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 32, ../scss/index.scss */
+/* line 33, ../scss/index.scss */
 body {
   line-height: 1;
 }
 
-/* line 35, ../scss/index.scss */
+/* line 36, ../scss/index.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 38, ../scss/index.scss */
+/* line 39, ../scss/index.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 41, ../scss/index.scss */
+/* line 42, ../scss/index.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 46, ../scss/index.scss */
+/* line 47, ../scss/index.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 51, ../scss/index.scss */
+/* line 52, ../scss/index.scss */
 body {
   background-color: #E8EBED;
   font-family: arial;
 }
 
 /* main content */
-/* line 57, ../scss/index.scss */
+/* line 58, ../scss/index.scss */
 .main {
   z-index: 0;
   position: relative;
@@ -295,22 +295,19 @@ body {
   padding-top: 14px;
   padding-right: 100px;
 }
-/* line 66, ../scss/index.scss */
+/* line 67, ../scss/index.scss */
 .main .main-content {
   position: relative;
   width: 100%;
   height: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
   text-align: center;
 }
-/* line 74, ../scss/index.scss */
+/* line 75, ../scss/index.scss */
 .main .main-content .column {
   position: relative;
-  width: 167px;
-  height: auto;
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 230px;
 }
 /* line 83, ../scss/index.scss */
 .main .main-content .column .post-0 {

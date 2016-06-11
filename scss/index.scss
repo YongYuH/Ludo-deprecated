@@ -2,7 +2,8 @@
 @import "right_sidebar";
 
 $right_sidebar_width: 100px;
-
+$card_width: 230px;
+$header_bar_height: 16%;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,7 +58,7 @@ body {
 .main {
     z-index: 0;
     position: relative;
-    top: 16%;
+    top: $header_bar_height;
     width: 100%;
     height: 100%;
     padding-top: 14px;
@@ -67,16 +68,15 @@ body {
         position: relative;
         width: 100%;
         height: 100%;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
         text-align: center;
 
         .column {
             position: relative;
-            width: 167px;
-            height: auto;
-            margin-right: 10px;
-            margin-left: 10px;
+            width: $card_width;
+            // margin-right: 10px;
+            // margin-left: 10px;
 
             // post
             @for $i from 0 through 11 {
