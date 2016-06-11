@@ -1,9 +1,11 @@
 @import "header";
 @import "right_sidebar";
 
+$header_bar_height: 16%;
 $right_sidebar_width: 100px;
 $card_width: 230px;
-$header_bar_height: 16%;
+$main_content_padding_x: 2%;
+$main_content_top_padding: 14px;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,27 +59,22 @@ body {
 /* main content */
 .main {
     z-index: 0;
-    position: relative;
-    top: $header_bar_height;
-    width: 100%;
+    position: absolute;
+    //width: 100%;
     height: 100%;
-    padding-top: 14px;
-    padding-right: $right_sidebar_width;
-    
+    top: $header_bar_height;
+    padding-top: $main_content_top_padding;
+    text-align: center;
+
     .main-content {
         position: relative;
-        width: 100%;
+        // width: 100%;
         height: 100%;
-        padding-left: 25px;
-        padding-right: 25px;
-        text-align: center;
+        margin: 0 auto;
 
         .column {
             position: relative;
             width: $card_width;
-            // margin-right: 10px;
-            // margin-left: 10px;
-
             // post
             @for $i from 0 through 11 {
                 .post-#{$i} {
@@ -143,7 +140,6 @@ body {
                         height: 30px;
 
                         background-position: center;
-                        //background-color: #e8ebed;
                         background-image: url('../images/log-out.png');
                         background-repeat: no-repeat;
                         background-size: 50%;
@@ -153,6 +149,11 @@ body {
             }
         }
     }
+}
+
+#scrollbar {
+    position: absolute;
+    top: 100px;
 }
 /* end of main content */
 

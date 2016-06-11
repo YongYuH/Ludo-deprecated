@@ -1,10 +1,15 @@
+$header_bar_height: 16%;
+$Ludo_logo_height: 63px;
+$win_rate_color: rgb(140, 200, 40);
+$finish_rate_color: rgb(255, 115, 20);
+
 /* header bar */
 .header-bar {
     position: fixed;
     top: 0;
     z-index: 1;
     width: 100%;
-    height: 16%;
+    height: $header_bar_height;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: rgb(182,188,193);
@@ -23,7 +28,7 @@
             padding: 18px 0px 18px 14px;
         
             .Ludo-logo {
-                height: 100%;
+                height: $Ludo_logo_height;
                 z-index: 2;
             }
             .Ludo-logo-text {
@@ -35,7 +40,7 @@
         }
 
         .schematic-icon-div {
-            position: absolute;
+            position: relative;
             display: inline-block;
             left: 200px;
             height: 100%;
@@ -102,7 +107,7 @@
             right: 80px;
         
             .win-rate__circle {
-                stroke: rgb(140, 200, 40);
+                stroke: $win_rate_color;
             }
             .win-rate__text {
                 font-size: 75%;
@@ -117,7 +122,7 @@
             right: 150px;
         
             .finish-rate__circle {
-                stroke: rgb(255, 115, 20);
+                stroke: $finish_rate_color;
             }
             .finish-rate__text {
                 font-size: 65%;
