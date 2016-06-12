@@ -3,6 +3,7 @@ function card_based_content_responsive() {
     var sidebar_width = 100;
     var card_width = 230;
     var card_padding_x = 15;
+    var card_padding_top = 10;
     var column_width = card_width + card_padding_x;
     var main_width = screen_width - sidebar_width;
 
@@ -12,6 +13,7 @@ function card_based_content_responsive() {
 
     $('.main').css('padding-right', sidebar_width + content_padding_x);
     $('.main').css('padding-left', content_padding_x);
+    $('.auto-start').css('right', sidebar_width + content_padding_x);
 
     var total_height_of_column = new Array(total_column); 
 
@@ -42,7 +44,7 @@ function card_based_content_responsive() {
         // get height of current post
         post = main.children().children().eq(post_num);
         post_height = post.height();
-        total_height_of_column[current_col] = total_height_of_column[current_col] + post_height + 10;
+        total_height_of_column[current_col] = total_height_of_column[current_col] + post_height + card_padding_top;
     }
 }
 

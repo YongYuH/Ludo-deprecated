@@ -1,11 +1,14 @@
 @import "header";
 @import "right_sidebar";
+@import "auto_start";
 
 $header_bar_height: 16%;
 $right_sidebar_width: 100px;
 $card_width: 230px;
 $main_content_padding_x: 2%;
 $main_content_top_padding: 14px;
+
+$background-gray: rgb(232, 235, 237);
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,7 +55,7 @@ table {
 }
 
 body {
-    background-color: #E8EBED;
+    background-color: $background-gray;
     font-family: arial;
 }
 
@@ -123,7 +126,6 @@ body {
                         height: 30px;
 
                         background-position: center;
-                        //background-color: #e8ebed;
                         background-image: url('../images/open-door.png');
                         background-repeat: no-repeat;
                         background-size: 50%;
