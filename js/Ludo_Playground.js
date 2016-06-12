@@ -8,7 +8,7 @@ function card_based_content_responsive() {
 
     var total_column = Math.floor(main_width / column_width);
 
-    var content_padding_x = (main_width - total_column * column_width)/2;
+    var content_padding_x = Math.round( (main_width - total_column * column_width + card_padding_x)/2 );
 
     $('.main').css('padding-right', sidebar_width + content_padding_x);
     $('.main').css('padding-left', content_padding_x);
