@@ -2,11 +2,10 @@
 @import "right_sidebar";
 @import "auto_start";
 
-$header_bar_height: 16%;
+$header_bar_height: 112px; // 16%
 $right_sidebar_width: 100px;
 $card_width: 230px;
-$main_content_padding_x: 2%;
-$main_content_top_padding: 14px;
+$main_content_top_padding: 4px;
 
 $background-gray: rgb(232, 235, 237);
 

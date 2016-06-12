@@ -1,9 +1,9 @@
-$header_bar_height: 16%;
+/* header bar */
+$header_bar_height: 112px;
 $Ludo_logo_height: 63px;
 $win_rate_color: rgb(140, 200, 40);
 $finish_rate_color: rgb(255, 115, 20);
 
-/* header bar */
 .header-bar {
     position: fixed;
     top: 0;
@@ -77,10 +77,12 @@ $finish_rate_color: rgb(255, 115, 20);
 
         .clock-icon-div {
             position: absolute;
-            right: 25px;
             top: 25px;
+            right: 25px;
+            height: 100%;
 
             .clock-icon {
+                position: relative;
                 height: 50px;
             }
         }

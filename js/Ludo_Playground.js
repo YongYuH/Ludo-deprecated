@@ -17,7 +17,7 @@ function card_based_content_responsive() {
 
     var total_height_of_column = new Array(total_column); 
 
-    // array initiation
+    // total_height_of_column array initiation
     for (var i = 0; i < total_column; i++) {
         total_height_of_column[i] = 0;
     }
