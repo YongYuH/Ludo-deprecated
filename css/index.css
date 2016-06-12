@@ -284,7 +284,7 @@ body {
   font-family: arial;
 }
 
-/* main content */
+/* main */
 /* line 60, ../scss/index.scss */
 .main {
   z-index: 0;
@@ -292,68 +292,66 @@ body {
   height: 100%;
   top: 16%;
   padding-top: 14px;
-  text-align: center;
 }
-/* line 69, ../scss/index.scss */
+/* line 67, ../scss/index.scss */
 .main .main-content {
   position: relative;
   height: 100%;
-  margin: 0 auto;
 }
-/* line 75, ../scss/index.scss */
+/* line 71, ../scss/index.scss */
 .main .main-content .column {
   position: relative;
   width: 230px;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-0 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-1 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-2 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-3 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-4 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-5 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-6 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-7 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-8 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-9 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-10 {
   position: absolute;
 }
-/* line 80, ../scss/index.scss */
+/* line 76, ../scss/index.scss */
 .main .main-content .column .post-11 {
   position: absolute;
 }
-/* line 85, ../scss/index.scss */
+/* line 81, ../scss/index.scss */
 .main .main-content .column .card {
   width: 100%;
   background-color: #FFFFFF;
@@ -363,12 +361,12 @@ body {
   border-radius: 5px;
   text-align: center;
 }
-/* line 94, ../scss/index.scss */
+/* line 90, ../scss/index.scss */
 .main .main-content .column .card .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 0.3s;
 }
-/* line 99, ../scss/index.scss */
+/* line 95, ../scss/index.scss */
 .main .main-content .column .card .card-message {
   position: relative;
   width: 100%;
@@ -377,7 +375,7 @@ body {
   border-width: 2px 0 0 0;
   border-color: #e8ebed;
 }
-/* line 107, ../scss/index.scss */
+/* line 103, ../scss/index.scss */
 .main .main-content .column .card .card-message .card-icon {
   position: absolute;
   top: 10px;
@@ -391,7 +389,7 @@ body {
   background-size: 60%;
   border-radius: 50%;
 }
-/* line 121, ../scss/index.scss */
+/* line 117, ../scss/index.scss */
 .main .main-content .column .card .card-message .card-door {
   position: absolute;
   top: 15px;
@@ -404,7 +402,7 @@ body {
   background-size: 50%;
   border-radius: 50%;
 }
-/* line 135, ../scss/index.scss */
+/* line 131, ../scss/index.scss */
 .main .main-content .column .card .card-message .card-pin {
   position: absolute;
   top: 15px;
@@ -418,10 +416,4 @@ body {
   border-radius: 50%;
 }
 
-/* line 154, ../scss/index.scss */
-#scrollbar {
-  position: absolute;
-  top: 100px;
-}
-
-/* end of main content */
+/* end of main */

@@ -56,21 +56,17 @@ body {
     font-family: arial;
 }
 
-/* main content */
+/* main */
 .main {
     z-index: 0;
     position: absolute;
-    //width: 100%;
     height: 100%;
     top: $header_bar_height;
     padding-top: $main_content_top_padding;
-    text-align: center;
 
     .main-content {
         position: relative;
-        // width: 100%;
         height: 100%;
-        margin: 0 auto;
 
         .column {
             position: relative;
@@ -151,10 +147,6 @@ body {
     }
 }
 
-#scrollbar {
-    position: absolute;
-    top: 100px;
-}
-/* end of main content */
+/* end of main */
 
 

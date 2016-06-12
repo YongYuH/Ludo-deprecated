@@ -6,18 +6,12 @@ function card_based_content_responsive() {
     var column_width = card_width + card_padding_x;
     var main_width = screen_width - sidebar_width;
 
-    //var content_padding_variable = main_width/column_width - Math.floor(main_width/column_width);
-    //console.log(content_padding_variable);
-    var content_padding_x = 105;
+    var total_column = Math.floor(main_width / column_width);
+
+    var content_padding_x = (main_width - total_column * column_width)/2;
 
     $('.main').css('padding-right', sidebar_width + content_padding_x);
     $('.main').css('padding-left', content_padding_x);
-
-    var total_column = 0;
-
-    var rwd_column_variable = (main_width - content_padding_x)/column_width;
-    console.log(rwd_column_variable);
-    total_column = Math.floor(rwd_column_variable);
 
     var total_height_of_column = new Array(total_column); 
 
