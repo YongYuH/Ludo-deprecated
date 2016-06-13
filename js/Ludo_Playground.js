@@ -27,7 +27,7 @@ function card_based_content_responsive() {
     var current_col = 0;
     var current_card_distance_x = 0;
 
-    var main = $('.main-content');
+    var main = $('.main');
     var total_post = main.children().length;
 
     // positioning column
