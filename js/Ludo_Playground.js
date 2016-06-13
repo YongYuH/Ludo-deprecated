@@ -1,30 +1,23 @@
 function card_based_content_responsive() {
     var screen_width = $(window).width()
-    var total_column = 0;
-    switch (true) {
-        case screen_width >= 1285:
-            total_column = 6;
-            break;
-        case screen_width >= 1095:
-            total_column = 5;
-            break;
-        case screen_width >= 930:
-            total_column = 4;
-            break;
-        case screen_width >= 770:
-            total_column = 3;
-            break;
-        case screen_width >= 550:
-            total_column = 2;
-            break;
-        case screen_width < 550:
-            total_column = 1;
+    var sidebar_width = 100;
+    var card_width = 230;
+    var card_padding_x = 15;
+    var card_padding_top = 10;
+    var column_width = card_width + card_padding_x;
+    var main_width = screen_width - sidebar_width;
 
-            break;
-    }
+    var total_column = Math.floor(main_width / column_width);
+
+    var content_padding_x = Math.round( (main_width - total_column * column_width + card_padding_x)/2 );
+
+    $('.main').css('padding-right', sidebar_width + content_padding_x);
+    $('.main').css('padding-left', content_padding_x);
+    $('.auto-start').css('right', sidebar_width + content_padding_x);
+
     var total_height_of_column = new Array(total_column); 
 
-    // array initiation
+    // total_height_of_column array initiation
     for (var i = 0; i < total_column; i++) {
         total_height_of_column[i] = 0;
     }
@@ -32,9 +25,9 @@ function card_based_content_responsive() {
     var post = 0;
     var post_height = 0;
     var current_col = 0;
-    var current_left_distance = 0;
+    var current_card_distance_x = 0;
 
-    var main = $('.main-content');
+    var main = $('.main');
     var total_post = main.children().length;
 
     // positioning column
@@ -42,8 +35,8 @@ function card_based_content_responsive() {
         current_col = post_num % total_column;
 
         // x axis
-        current_left_distance = 100 / total_column * current_col + '%';
-        $('.column-' + post_num).css('left', current_left_distance);
+        current_card_distance_x = current_col * (card_width + card_padding_x);
+        $('.column-' + post_num).css('left', current_card_distance_x);
 
         // y axis
         $('.post-'+post_num).css('top', total_height_of_column[current_col]);
@@ -51,7 +44,7 @@ function card_based_content_responsive() {
         // get height of current post
         post = main.children().children().eq(post_num);
         post_height = post.height();
-        total_height_of_column[current_col] = total_height_of_column[current_col] + post_height + 10;
+        total_height_of_column[current_col] = total_height_of_column[current_col] + post_height + card_padding_top;
     }
 }
 

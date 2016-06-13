@@ -1,9 +1,10 @@
 /* right sidebar */
+$header_bar_height: 112px;
 $right_sidebar_width: 100px;
 
 .right-sidebar {
     position: fixed;
-    top: 16%;
+    top: $header_bar_height;
     right: 0;
     z-index: 1;
     height: 84%;
