@@ -1,0 +1,32 @@
+@import "helpers/reset";
+@import "layout/header";
+@import "layout/right_sidebar";
+@import "layout/auto_start";
+@import "helpers/mixins";
+@import "helpers/placeholders";
+@import "helpers/variables";
+@import "components/card";
+
+body {
+    background-color: $background-gray;
+    font-family: arial;
+}
+.main {
+    z-index: 0;
+    @extend %absolute;
+    @extend %as_wide_as_parent;
+    @extend %as_tall_as_parent;
+    top: $header_bar_height;
+    padding-top: $main_content_top_padding;
+}
+    .column {
+        @extend %relative;
+        width: $card_width;
+    }
+        .quick-start {
+            @extend .card;
+            height: 100px;
+            @include background_img_content(quick_start_icon);
+            @extend %background_img_setting;
+            background-size: 30%;
+        }

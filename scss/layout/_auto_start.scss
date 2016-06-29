@@ -1,0 +1,37 @@
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/placeholders";
+/* auto_start button */
+.auto-start {
+    @extend %fixed;
+    right: $right_sidebar_width;
+    bottom: 0;
+    @include dimensions($auto_start_width, $auto_start_height);
+    border-radius: 5px;
+    @extend %card_background;
+    z-index: 1;
+
+    .auto-start-icon {
+        @extend %absolute;
+        left: -50px;
+        @include dimensions(100%, 100%);
+        @include background_img_content(auto_start_icon);
+        @extend %background_img_setting;
+        background-size: 20%;
+    } 
+
+    .auto-start-text {
+        @extend %absolute;
+        top: 9px;
+        right: 45px;
+    }
+    .auto-start-searchbar {
+        @extend %absolute;
+        top: 32px;
+        right: 40px;
+        z-index: 2;
+        width: 92px;
+        background-color: $gray;
+    }
+}
+/* end of auto_start button */
