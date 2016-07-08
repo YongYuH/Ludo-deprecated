@@ -1,0 +1,126 @@
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/placeholders";
+/* header bar */
+.header {
+    @extend %fixed;
+    top: 0;
+    z-index: 1;
+    @extend %as_wide_as_parent;
+    height: $header_bar_height;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(182,188,193);
+    background-color: white;
+}
+    .header-logo-div {
+        @extend %absolute;
+        display: inline-block;
+        @extend %as_tall_as_parent;
+        width: 250px;
+    }
+        .header-logo {
+            @extend %relative;
+            display: inline-block;
+            @extend %as_wide_as_parent;
+            padding: 25px 0 25px 0;
+            height: $Ludo_logo_height;
+            z-index: 2;
+        }
+            // .Ludo-logo {
+            //     height: $Ludo_logo_height;
+            //     z-index: 2;
+            // }
+            // .Ludo-logo-text {
+            //     font-size: 130%;
+            //     font-weight: 500;
+            //     font-family: arial;
+            //     color: black;
+            // }
+        .schematic-icon-div {
+            @extend %relative;
+            display: inline-block;
+            left: 300px;
+            width: 65px;
+            @extend %as_tall_as_parent;
+        }
+            .schematic-icon-text {
+                padding: 30px 0 0 0;
+                font-size: 60%;
+                text-align: center;
+            }
+            .schematic-icon {
+                @include dimensions(40px, 40px);
+                margin: 0 auto;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #D8DDE4;
+                @extend %round_border;
+                background-color: #FFFC79;
+                @include background_img_content(playground_icon);
+                @extend %background_img_setting;
+                background-size: contain;
+            }
+    .rate-div {
+        @extend %relative;
+        display: inline-block;
+        right: 0;
+        float: right;
+        width: 50%;
+        @extend %as_tall_as_parent;
+    }
+        .clock-icon-div {
+            @extend %absolute;
+            top: 30px;
+            right: 25px;
+            @extend %as_tall_as_parent;
+        }
+            .clock-icon {
+                @extend %relative;
+                height: 50px;
+            }
+        .personal-data {
+            @extend %absolute;
+            @extend %as_tall_as_parent;
+        }
+            .pesonal-data__svg {
+                right: 0;
+            }
+            .pesonal-data__circle {
+                fill: #FFFFFF;
+                stroke-width: 10px;
+            }
+            .pesonal-data__number {
+                color: black;
+                @extend %text_center;
+                font-size: 15px;
+            }
+        .win-rate {
+            right: 80px;
+        }
+            .win-rate__circle {
+                stroke: $win_rate_color;
+            }
+            .win-rate__text {
+                font-size: 75%;
+            }
+            .win-rate__number {
+                top: 33%;
+                left: 25%;
+            }
+        .finish-rate {
+            right: 150px;
+        }
+            .finish-rate__circle {
+                stroke: $finish_rate_color;
+            }
+            .finish-rate__text {
+                font-size: 65%;
+                color: rgb(255, 0, 0);
+                @extend %text_center;
+            }
+            .finish-rate__number {
+                top: 25%;
+                left: 30%;
+            }
+/* end of header bar */
