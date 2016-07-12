@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default class SideBar extends React.Component {
     render() {
         return ( 
             <div className="right-sidebar">
-                {this.getSidebar1()}
-                {this.getSidebar2()}
+                {this.getPlayground()}
+                {this.getProfile()}
                 {this.getSidebar3()}
                 {this.getSidebar4()}
                 {this.getSidebar5()}
@@ -14,22 +15,22 @@ export default class SideBar extends React.Component {
         );
     }
 
-    getSidebar1() {
+    getPlayground() {
         return (
             <div className="right-sidebar-item color-sidebar1">
-                <a href="">
+                <Link to="playground">
                     <div className="right-sidebar-item__icon playground-icon"></div>
-                </a>
+                </Link>
             </div>
         );
     }
 
-    getSidebar2() {
+    getProfile() {
         return (
             <div className="right-sidebar-item color-sidebar2">
-                <a href="">
+                <Link to="profile">
                     <div className="right-sidebar-item__icon profile-icon"></div>
-                </a>
+                </Link>
             </div>
         );
     }

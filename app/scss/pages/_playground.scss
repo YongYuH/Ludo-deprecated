@@ -1,7 +1,6 @@
-@import "helpers/reset";
-@import "layout/header";
-@import "layout/right_sidebar";
-@import "layout/auto_start";
+@import "components/header";
+@import "components/right_sidebar";
+@import "components/auto_start";
 @import "helpers/mixins";
 @import "helpers/placeholders";
 @import "helpers/variables";
@@ -11,11 +10,9 @@ body {
     background-color: $background-gray;
     font-family: arial;
 }
-.main {
+.playground-main {
     z-index: 0;
     @extend %absolute;
-    @extend %as_wide_as_parent;
-    @extend %as_tall_as_parent;
     top: $header_bar_height;
     padding-top: $main_content_top_padding;
 }

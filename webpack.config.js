@@ -5,12 +5,8 @@ var config = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        path.resolve(__dirname, 'app/main.js')
+        path.resolve(__dirname, 'app/js/app.js')
     ],
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
-    },
     module: {
         loaders: [{
             test: /\.js?$/,
@@ -26,6 +22,10 @@ var config = {
             test: /\.css$/,
             loader: 'style!css'
         }]
+    },
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js'
     },
     plugins: [
         new webpack.NoErrorsPlugin()
