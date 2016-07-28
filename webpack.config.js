@@ -8,20 +8,22 @@ var config = {
         path.resolve(__dirname, 'app/js/app/routes.js')
     ],
     module: {
-        loaders: [{
-            test: /\.js?$/,
-            exclude: /node_modules/,
-            include: path.join(__dirname, 'app'),
-            loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ],
-        },
-        {
-            test: /\.(png|jpg|gif)$/,
-            loader: 'url-loader?limit=8192'
-        },
-        {
-            test: /\.css$/,
-            loader: 'style!css'
-        }]
+        loaders: [
+            {
+                test: /\.js?$/,
+                exclude: /node_modules/,
+                include: path.join(__dirname, 'app'),
+                loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'url-loader?limit=8192'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css'
+            }
+        ]
     },
     output: {
         path: path.resolve(__dirname, 'build'),

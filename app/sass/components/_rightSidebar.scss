@@ -4,10 +4,10 @@
 /* right sidebar */
 .right-sidebar {
     @extend %fixed;
-    top: $header_bar_height;
+    top: $header_height;
     right: 0;
-    z-index: 1;
-    @include dimensions($right_sidebar_width, 84%);
+    z-index: $right-sidebar_depth;
+    @include dimensions($right-sidebar_width, 84%);
     transition-duration: 1s;
 }
     .right-sidebar-item {
@@ -24,7 +24,7 @@
             background-size: contain;
         }
     .color-sidebar1 {
-        background-color: rgb(255, 252, 121);
+        background-color: $sidebar-color-1;
         .playground-icon {
             @include background_img_content(playground_icon);
         }

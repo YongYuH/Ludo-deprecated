@@ -4,9 +4,9 @@
 /* auto_start button */
 .auto-start {
     @extend %fixed;
-    right: $right_sidebar_width;
+    right: $right-sidebar_width;
     bottom: 0;
-    @include dimensions($auto_start_width, $auto_start_height);
+    @include dimensions($auto-start_width, $auto-start_height);
     border-radius: 5px;
     @extend %card_background;
     z-index: 1;

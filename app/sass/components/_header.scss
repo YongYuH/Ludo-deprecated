@@ -5,38 +5,26 @@
 .header {
     @extend %fixed;
     top: 0;
-    z-index: 1;
+    z-index: $header_depth;
     @extend %as_wide_as_parent;
-    height: $header_bar_height;
+    height: $header_height;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: rgb(182,188,193);
     background-color: white;
 }
-    .header-logo-div {
+    .header-Ludo-logo-div {
         @extend %absolute;
-        display: inline-block;
+        width: $header-Ludo-logo_width;
         @extend %as_tall_as_parent;
-        width: 250px;
     }
-        .header-logo {
+        .header-Ludo-logo {
             @extend %relative;
-            display: inline-block;
+            z-index: $header-Ludo-logo_depth;
             @extend %as_wide_as_parent;
-            padding: 25px 0 25px 0;
-            height: $Ludo_logo_height;
-            z-index: 2;
+            margin-top: $header-Ludo-logo-margin_y;
+            margin-bottom: $header-Ludo-logo-margin_y;
         }
-            // .Ludo-logo {
-            //     height: $Ludo_logo_height;
-            //     z-index: 2;
-            // }
-            // .Ludo-logo-text {
-            //     font-size: 130%;
-            //     font-weight: 500;
-            //     font-family: arial;
-            //     color: black;
-            // }
         .schematic-icon-div {
             @extend %relative;
             display: inline-block;
