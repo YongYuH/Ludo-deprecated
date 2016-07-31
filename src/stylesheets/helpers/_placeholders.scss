@@ -4,6 +4,11 @@
 %fixed { position: fixed; }
 %absolute { position: absolute; }
 %relative { position: relative; }
+%closer { z-index: 2; }
+%top { top: 0; }
+%bottom { bottom: 0; }
+%right { right: 0; }
+%left { left: 0; }
 
 // dimension
 %as_wide_as_parent { width: 100%; }

@@ -3,10 +3,6 @@
 @import "helpers/variables";
 @import "components/card";
 
-body {
-    background-color: $background-gray;
-    font-family: "Microsoft JhengHei", "Exo";
-}
 .playground {
     @extend %relative;
     top: $header_height;

@@ -6,11 +6,9 @@ import App from './App';
 import Playground from '../playground/Playground';
 import Profile from '../profile/Profile';
 
-import $ from 'jquery';
+require('../../stylesheets/main.scss');
 
-import '../../css/main.css';
-
-const app = $('#app')[0];
+const app = document.getElementById("app");
 
 ReactDOM.render(
     <Router history={hashHistory}>

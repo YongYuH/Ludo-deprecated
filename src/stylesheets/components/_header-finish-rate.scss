@@ -1,0 +1,29 @@
+@import "helpers/placeholders";
+
+// position
+$header-finish-rate_right: 150px;
+$header-finish-rate__number_top: 25%;
+$header-finish-rate__number_left: 30%;
+
+// color
+$header-finish-rate__circle_color: rgb(255, 115, 20);
+
+// typography
+$header-finish-rate__text_font-size: 65%;
+
+.header-finish-rate {
+    @extend %absolute;
+    @extend %as_tall_as_parent;
+    right: $header-finish-rate_right;
+}
+    .header-finish-rate__circle {
+        stroke: $header-finish-rate__circle_color;
+    }
+    .header-finish-rate__text {
+        font-size: $header-finish-rate__text_font-size;
+        @extend %text_center;
+    }
+    .header-finish-rate__number {
+        top: $header-finish-rate__number_top;
+        left: $header-finish-rate__number_left;
+    }

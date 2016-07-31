@@ -5,14 +5,14 @@ var config = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        path.resolve(__dirname, 'app/js/app/routes.js')
+        path.resolve(__dirname, 'src/components/app/routes.js')
     ],
     module: {
         loaders: [
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
-                include: path.join(__dirname, 'app'),
+                include: path.join(__dirname, 'src'),
                 loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
             },
             {
@@ -22,6 +22,11 @@ var config = {
             {
                 test: /\.css$/,
                 loader: 'style!css'
+            },
+            {
+              test: /\.scss$/,
+              include: path.join(__dirname, 'src/stylesheets'),
+              loaders: ["style", "css", "sass"]
             }
         ]
     },

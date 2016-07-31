@@ -1,27 +1,45 @@
 @import "helpers/mixins";
 @import "helpers/placeholders";
-@import "helpers/variables";
-/* right sidebar */
+
+// position
+$header_height: 112px;
+
+// dimension
+$right-sidebar_width: 100px;
+$right-sidebar_height: 84%;
+$right-sidebar-item_height: 16.7%;
+$right-sidebar-item__icon_width: 55%;
+
+// background
+$color-sidebar4_background-size: 160%;
+$color-sidebar5_background-size: 120%;
+
+// color
+$sidebar-color-1: rgba(255, 252, 121, 1);
+$sidebar-color-2: rgba(255, 212, 121, 1);
+$sidebar-color-3: rgba(255, 126, 121, 1);
+$sidebar-color-4: rgba(215, 131, 255, 1);
+$sidebar-color-5: rgba(118, 214, 255, 1);
+$sidebar-color-6: rgba(115, 250, 121, 1);
+
 .right-sidebar {
     @extend %fixed;
     top: $header_height;
-    right: 0;
-    z-index: $right-sidebar_depth;
-    @include dimensions($right-sidebar_width, 84%);
-    transition-duration: 1s;
+    @extend %right;
+    width: $right-sidebar_width;
+    height: $right-sidebar_height;
 }
     .right-sidebar-item {
         @extend %relative;
         @extend %as_wide_as_parent;
-        height: 16.7%;
-        border-color: #FFFFFF;
+        height: $right-sidebar-item_height;
+        border-color: white;
     }
         .right-sidebar-item__icon {
-            width: 55%;
+            width: $right-sidebar-item__icon_width;
             @extend %as_tall_as_parent;
-            margin: 0 auto;
+            @extend %margin_center_x;
             @extend %background_img_setting;
-            background-size: contain;
         }
     .color-sidebar1 {
         background-color: $sidebar-color-1;
@@ -30,35 +48,34 @@
         }
     }
     .color-sidebar2 {
-        background-color: #FFD479;
+        background-color: $sidebar-color-2;
         .profile-icon {
             @include background_img_content(profile_icon);
         }
     }
     .color-sidebar3 {
-        background-color: #FF7E79;
+        background-color: $sidebar-color-3;
         .start-ludo-icon {
             @include background_img_content(start_ludo_icon);
         }
     }
     .color-sidebar4 {
-        background-color: #D783FF;
+        background-color: $sidebar-color-4;
         .freinds-icon {
-            width: 90%;
             @include background_img_content(ludo_friends_icon);
+            background-size: $color-sidebar4_background-size;
         }
     }
     .color-sidebar5 {
-        background-color: #76D6FF;
+        background-color: $sidebar-color-5;
         .ludo-sports-icon {
-            width: 65%;
             @include background_img_content(ludo_sports_icon);
+            background-size: $color-sidebar5_background-size;
         }
     }
     .color-sidebar6 {
-        background-color: #73FA79;
+        background-color: $sidebar-color-6;
         .ludo-read-icon {
             @include background_img_content(ludo_read_icon);
         }
     }
-/* end of right nav bar */

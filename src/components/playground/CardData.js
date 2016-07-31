@@ -1,4 +1,4 @@
-export const CardData = [
+export const rawCardData = [
     {
         "launchDate": "2016/07/20",
         "type": "sports",

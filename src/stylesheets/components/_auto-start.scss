@@ -1,0 +1,52 @@
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/placeholders";
+
+// position
+$auto-start__icon_left: -50px;
+$auto-start__text_top: 9px;
+$auto-start__text_right: 45px;
+$auto-start__searchbar_top: 32px;
+$auto-start__searchbar_right: 40px;
+
+// dimension
+$auto-start_width: 230px;
+$auto-start_height: 70px;
+$auto-start__searchbar_width: 92px;
+
+// border
+$auto-start_border-radius: 5px;
+
+// background
+$auto-start__icon_background-size: 20%;
+
+.auto-start {
+    @extend %fixed;
+    right: $right-sidebar_width;
+    @extend %bottom;
+    width: $auto-start_width;
+    height: $auto-start_height;
+    border-radius: $auto-start_border-radius;
+    @extend %card_background;
+
+    .auto-start__icon {
+        @extend %absolute;
+        left: $auto-start__icon_left;
+        @include dimensions(100%, 100%);
+        @include background_img_content(auto_start_icon);
+        @extend %background_img_setting;
+        background-size: $auto-start__icon_background-size;
+    } 
+    .auto-start__text {
+        @extend %absolute;
+        top: $auto-start__text_top;
+        right: $auto-start__text_right;
+    }
+    .auto-start__searchbar {
+        @extend %absolute;
+        top: $auto-start__searchbar_top;
+        right: $auto-start__searchbar_right;
+        width: $auto-start__searchbar_width;
+        background-color: $gray;
+    }
+}
