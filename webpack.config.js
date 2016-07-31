@@ -5,7 +5,7 @@ var config = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        path.resolve(__dirname, 'src/components/app/routes.js')
+        path.resolve(__dirname, 'src/js/app/routes.js')
     ],
     module: {
         loaders: [
