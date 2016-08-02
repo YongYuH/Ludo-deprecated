@@ -17,11 +17,9 @@ $card_background-color: white;
 .grid {
     @extend %margin_center_x;
 }
-
     .grid-item {
         width: $grid-item_width;
     }
-
     .card {
         margin-right: $card_margin_x;
         margin-left: $card_margin_x;

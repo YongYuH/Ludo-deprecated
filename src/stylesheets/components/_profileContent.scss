@@ -1,0 +1,70 @@
+@import "helpers/variables";
+/* 
+variables
+    color
+        $g_background_gray
+*/
+@import "components/card";
+/* 
+variables 
+    margin
+        $card_margin_x
+        $card_margin-bottom
+    border
+        $card_border-radius
+    color
+        $card_border-color
+    background
+        $card_background-color
+*/
+
+.profileContent {
+    @extend .card;
+    @extend %as_wide_as_parent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+    .profileContent-avatar {
+        height: 230px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .profileContent-information {
+        height: 230px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+        .profileContent-information__element {
+            margin-bottom: 6px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            background-color: $g_background_gray;
+        }
+    .profileContent-detail {
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: $g_background_gray;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        @extend %text_center;
+        font-size: 16px;
+        font-weight: 500;
+        // overwrite bootstrap style
+        div.col-xs-2 {
+            padding: 0;
+        }
+    }
+        .profileContent-detail__element {
+            @extend %clickable;
+        }
+    .profileContent-chart {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        padding-left: 5px;
+    }

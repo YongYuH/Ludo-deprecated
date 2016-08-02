@@ -17,7 +17,7 @@ var config = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=8192'
+                loader: 'url-loader?limit=100000'
             },
             {
                 test: /\.css$/,

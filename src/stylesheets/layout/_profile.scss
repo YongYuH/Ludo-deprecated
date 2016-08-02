@@ -1,41 +1,22 @@
 @import "components/card";
+/* 
+variables 
+    dimension
+        $grid-item_width
+    margin
+        $card_margin_x
+*/
 
-// dimension
-$profileContent_width: ($grid-item_width + $card_margin_x)*2;
-$profileContent_height: 450px;
+$grid-item--half_width: ($grid-item_width + $card_margin_x)*2;
 
-// margin
-$profileContent_margin_x: $card_margin_x;
-$profileContent_margin-bottom: $card_margin-bottom;
-
-// border
-$profileContent_border-radius: $card_border-radius;
-
-// color
-$profileContent_border-color: $card_border-color;
-
-// background
-$profileContent_background-color: $card_background-color;
-
-.profileContent {
-    width: $profileContent_width;
-    height: $profileContent_height;
-    margin-right: $profileContent_margin_x;
-    margin-left: $profileContent_margin_x;
-    margin-bottom: $profileContent_margin-bottom;
-    border-color: $profileContent_border-color;
-    border-radius: $profileContent_border-radius;
-    background-color: $profileContent_background-color;
-    @extend %text_center;
-    @include transition-duration(0.3s);
-    @include box-shadow(0px, 1px, 2px, 0px, rgba(0,0,0,0.2));
-
-    &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        @include transition-duration(0.3s);
-    }
+.grid-item--half {
+    width: $grid-item--half_width;
+    padding-right: 8px;
+    padding-left: 8px;
 }
 
-    .profileContent-avatar {
-        
-    }
+@import "components/profileContent";
+@import "components/profileLudoing";
+@import "components/profileHistory";
+@import "components/profileStatistic";
+@import "components/profilePrize";
