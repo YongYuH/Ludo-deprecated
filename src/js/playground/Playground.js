@@ -1,40 +1,24 @@
 import React from 'react';
 import Radium from 'radium';
-// import Masonry from 'react-masonry-component';
+import 'masonry-layout';
 
 import Card from './Card';
+import QuickStart from './QuickStart';
+import Search from '../app/Search';
 import { rawCardData } from './CardData';
 
 export default class Playground extends React.Component {
     render() {
-        return ( 
-            <div className="playground" style={styles.base}>
-                <Card data={rawCardData}/>
+        return (
+            <div className="playground">
+                <div className="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 230 , "isFitWidth": true }'>
+                    <QuickStart />
+                    <Card data={rawCardData} />
+                </div>
+                <Search />
             </div>
         );
     }
 }
 
-Playground = Radium(Playground)
-
-const screenWidth = window.innerWidth;
-const sidebarWidth = 100;
-const cardWidth = 230;
-const cardPaddingX = 15;
-const cardPaddingTop = 10;
-const columnWidth = cardWidth + cardPaddingX;
-const mainWidth = screenWidth - sidebarWidth;
-const totalColumn = Math.floor(mainWidth / columnWidth);
-const contentPaddingX = Math.round( (mainWidth - totalColumn * columnWidth + cardPaddingX)/2 );
-
-const styles = {
-    base: {
-        position: 'relative',
-        top: 112,
-        marginRight: `${sidebarWidth}px`,
-        paddingTop: 14,
-        paddingRight: `${contentPaddingX}px`,
-        paddingLeft: `${contentPaddingX}px`,
-        backgroundColor: 'rgba(232, 235, 237, 1)',
-    }
-}
+//Playground = Radium(Playground)

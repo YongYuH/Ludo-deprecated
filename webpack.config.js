@@ -27,6 +27,10 @@ var config = {
               test: /\.scss$/,
               include: path.join(__dirname, 'src/stylesheets'),
               loaders: ["style", "css", "sass"]
+            },
+            {
+                test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+                loader: 'imports?define=>false&this=>window'
             }
         ]
     },

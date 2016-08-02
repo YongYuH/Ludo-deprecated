@@ -6,7 +6,7 @@ import App from './App';
 import Playground from '../playground/Playground';
 import Profile from '../profile/Profile';
 
-require('../../stylesheets/main.scss');
+import '../../stylesheets/main.scss';
 
 const app = document.getElementById("app");
 

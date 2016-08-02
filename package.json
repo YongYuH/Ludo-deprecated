@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/YongYuH/Ludo#readme",
   "dependencies": {
+    "imports-loader": "^0.6.5",
     "jquery": "^3.1.0",
     "masonry-layout": "^4.1.0",
     "radium": "^0.18.1",
