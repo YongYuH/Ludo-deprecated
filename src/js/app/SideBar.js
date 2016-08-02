@@ -12,8 +12,8 @@ export default class SideBar extends React.Component {
                 {this.getProfile()}
                 {this.getSidebar3()}
                 {this.getSidebar4()}
-                {this.getSidebar5()}
-                {this.getSidebar6()}
+                {this.getSportsPlayground()}
+                {this.getReadingPlayground()}
             </div>
         );
     }
@@ -41,9 +41,9 @@ export default class SideBar extends React.Component {
     getSidebar3() {
         return (
             <div className="right-sidebar-item color-sidebar3">
-                <a href="">
+                <Link to="">
                     <div className="right-sidebar-item__icon start-ludo-icon"></div>
-                </a>
+                </Link>
             </div>
         );
     }
@@ -51,29 +51,29 @@ export default class SideBar extends React.Component {
     getSidebar4() {
         return (
             <div className="right-sidebar-item color-sidebar4">
-                <a href="">
+                <Link to="">
                     <div className="right-sidebar-item__icon freinds-icon"></div>
-                </a>
+                </Link>
             </div>
         );
     }
 
-    getSidebar5() {
+    getSportsPlayground() {
         return (
             <div className="right-sidebar-item color-sidebar5">
-                <a href="">
+                <Link to="Playground">
                     <div className="right-sidebar-item__icon ludo-sports-icon"></div>
-                </a>
+                </Link>
             </div>
         );
     }
 
-    getSidebar6() {
+    getReadingPlayground() {
         return (
             <div className="right-sidebar-item color-sidebar6">
-                <a href="">
+                <Link to="Playground">
                     <div className="right-sidebar-item__icon ludo-read-icon"></div>
-                </a>
+                </Link>
             </div>
         );
     }
