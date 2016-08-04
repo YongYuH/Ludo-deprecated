@@ -3,17 +3,26 @@ import { Link } from "react-router";
 
 import Playground from '../playground/Playground';
 import Profile from '../profile/Profile';
+import Create from '../create/Create';
+import Friend from '../friend/Friend';
 
 export default class SideBar extends React.Component {
-    render() {
-        return ( 
-            <div className="right-sidebar">
-                {this.getPlayground()}
-                {this.getProfile()}
-                {this.getSidebar3()}
-                {this.getSidebar4()}
-                {this.getSportsPlayground()}
-                {this.getReadingPlayground()}
+    getCreate() {
+        return (
+            <div className="right-sidebar-item color-sidebar3">
+                <Link to="Create">
+                    <div className="right-sidebar-item__icon start-ludo-icon"></div>
+                </Link>
+            </div>
+        );
+    }
+
+    getFriend() {
+        return (
+            <div className="right-sidebar-item color-sidebar4">
+                <Link to="Friend">
+                    <div className="right-sidebar-item__icon freinds-icon"></div>
+                </Link>
             </div>
         );
     }
@@ -38,21 +47,11 @@ export default class SideBar extends React.Component {
         );
     }
 
-    getSidebar3() {
+    getReadingPlayground() {
         return (
-            <div className="right-sidebar-item color-sidebar3">
-                <Link to="">
-                    <div className="right-sidebar-item__icon start-ludo-icon"></div>
-                </Link>
-            </div>
-        );
-    }
-
-    getSidebar4() {
-        return (
-            <div className="right-sidebar-item color-sidebar4">
-                <Link to="">
-                    <div className="right-sidebar-item__icon freinds-icon"></div>
+            <div className="right-sidebar-item color-sidebar6">
+                <Link to="Playground">
+                    <div className="right-sidebar-item__icon ludo-read-icon"></div>
                 </Link>
             </div>
         );
@@ -68,12 +67,15 @@ export default class SideBar extends React.Component {
         );
     }
 
-    getReadingPlayground() {
-        return (
-            <div className="right-sidebar-item color-sidebar6">
-                <Link to="Playground">
-                    <div className="right-sidebar-item__icon ludo-read-icon"></div>
-                </Link>
+    render() {
+        return ( 
+            <div className="right-sidebar">
+                {this.getPlayground()}
+                {this.getProfile()}
+                {this.getCreate()}
+                {this.getFriend()}
+                {this.getSportsPlayground()}
+                {this.getReadingPlayground()}
             </div>
         );
     }

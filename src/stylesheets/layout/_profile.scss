@@ -1,22 +1,27 @@
+@import "helpers/placeholders";
+@import "components/profile-content";
+@import "components/profile-ludoing";
+@import "components/profile-history";
+@import "components/profile-statistic";
+@import "components/profile-prize";
 @import "components/card";
-/* 
-variables 
-    dimension
-        $grid-item_width
-    margin
-        $card_margin_x
-*/
 
-$grid-item--half_width: ($grid-item_width + $card_margin_x)*2;
+    .profile-element {
+        @extend .card;
+        @extend %as_wide_as_parent;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        // overwrite bootstrap style
+        div.row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        div.col-xs-2 {
+            padding: 0;
+        }
+    }
+        .profile-element__title {
+            padding-bottom: 15px;
+            font-size: 16px;
+        }
 
-.grid-item--half {
-    width: $grid-item--half_width;
-    padding-right: 8px;
-    padding-left: 8px;
-}
-
-@import "components/profileContent";
-@import "components/profileLudoing";
-@import "components/profileHistory";
-@import "components/profileStatistic";
-@import "components/profilePrize";

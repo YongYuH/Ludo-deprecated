@@ -1,0 +1,20 @@
+@import "helpers/variables";
+@import "helpers/placeholders";
+
+.profile-ludoing__element {
+    width: 70px;
+    height: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: $g_background_gray;
+    @extend %text_center;
+}
+    .profile-ludoing__icon {
+        height: 70%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+    }

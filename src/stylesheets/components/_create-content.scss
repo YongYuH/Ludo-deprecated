@@ -1,0 +1,33 @@
+@import "components/card";
+@import "components/profile-content";
+
+.create-content {
+    @extend .card;
+    @extend %as_wide_as_parent;
+    @extend %text_center;
+}
+    .create-content-icon {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+        .create-content-icon__icon {
+            height: 200px;
+            @include background_img_content(quick_start_icon);
+            @extend %background_img_setting;
+        }
+    .create-content-information {
+        @extend .profile-content-information;
+    }
+        .create-content-information__element {
+            @extend .profile-content-information__element;
+        }
+    .create-content-invitation {
+        @extend .profile-content-information__element;
+        margin-bottom: 0px;
+    }
+    .create-content-calendar {
+        height: 320px;
+        @include background_img_content(calendar);
+        @extend %background_img_setting;
+        margin-bottom: 15px;
+    }

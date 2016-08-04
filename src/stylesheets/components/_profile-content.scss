@@ -4,44 +4,35 @@ variables
     color
         $g_background_gray
 */
+@import "helpers/placeholders";
 @import "components/card";
-/* 
-variables 
-    margin
-        $card_margin_x
-        $card_margin-bottom
-    border
-        $card_border-radius
-    color
-        $card_border-color
-    background
-        $card_background-color
-*/
 
-.profileContent {
+.profile-content {
     @extend .card;
     @extend %as_wide_as_parent;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    @extend %text_center;
 }
-    .profileContent-avatar {
+    .profile-content-avatar {
         height: 230px;
         padding-left: 5px;
         padding-right: 5px;
     }
-    .profileContent-information {
+    .profile-content-information {
         height: 230px;
         padding-right: 20px;
         padding-top: 20px;
     }
-        .profileContent-information__element {
+        .profile-content-information__element {
             margin-bottom: 6px;
             padding-top: 5px;
             padding-bottom: 5px;
             border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(226, 229, 235);
             background-color: $g_background_gray;
         }
-    .profileContent-detail {
+    .profile-content-detail {
         border-top-style: solid;
         border-top-width: 1px;
         border-bottom-style: solid;
@@ -59,10 +50,10 @@ variables
             padding: 0;
         }
     }
-        .profileContent-detail__element {
+        .profile-content-detail__element {
             @extend %clickable;
         }
-    .profileContent-chart {
+    .profile-content-chart {
         padding-top: 20px;
         padding-bottom: 10px;
         padding-right: 15px;

@@ -1,12 +1,12 @@
 @import "helpers/placeholders";
-@import "helpers/variables";
 
 @import "components/card";
 
 .quick-start {
     @extend .card;
-    height: 100px;
-    @include background_img_content(quick_start_icon);
-    @extend %background_img_setting;
-    background-size: 30%;
 }
+    .quick-start__icon {
+        height: 100px;
+        @include background_img_content(quick_start_icon);
+        @extend %background_img_setting;
+    }

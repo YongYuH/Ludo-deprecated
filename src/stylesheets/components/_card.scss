@@ -1,7 +1,9 @@
 @import "helpers/placeholders";
 
 // dimension
-$grid-item_width: 225px;
+$grid-item_width: 270px;
+$grid-item--half_width: 530px;
+$grid-item--friend_width: 170px;
 
 // margin
 $card_margin_x: 7.5px;
@@ -9,6 +11,9 @@ $card_margin-bottom: 10px;
 
 // border
 $card_border-radius: 5px;
+
+// padding
+$card_padding_y: 10px;
 
 // color
 $card_border-color: hsla(0, 0%, 0%, 0.5);
@@ -19,6 +24,14 @@ $card_background-color: white;
 }
     .grid-item {
         width: $grid-item_width;
+        @extend %text_center;
+    }
+    .grid-item--half {
+        width: $grid-item--half_width;
+    }
+    .grid-item--friend {
+        width: $grid-item--friend_width;
+        @extend %text_center;
     }
     .card {
         margin-right: $card_margin_x;
@@ -26,13 +39,14 @@ $card_background-color: white;
         margin-bottom: $card_margin-bottom;
         border-color: $card_border-color;
         border-radius: $card_border-radius;
+        padding-top: $card_padding_y;
+        padding-bottom: $card_padding_y;
         background-color: $card_background-color;
-        @extend %text_center;
         @include transition-duration(0.3s);
         @include box-shadow(0px, 1px, 2px, 0px, rgba(0,0,0,0.2));
 
         &:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,0.19);
             @include transition-duration(0.3s);
         }
     }
