@@ -1,5 +1,10 @@
 import React from 'react';
-import 'masonry-layout';
+import Masonry from 'react-masonry-component';
+
+const masonryOptions = {
+    itemSelector: ".grid-item",
+    columnWidth: ".grid-item",
+}
 
 export default class PlaygroundLudoList extends React.Component {
     constructor() {
@@ -27,7 +32,7 @@ export default class PlaygroundLudoList extends React.Component {
     render() {
         this.getDifferentCardContent();
         return (
-            <div className="playground-ludolist">
+            <div>
                 {this.state.cardContent}
             </div>
         );

@@ -15,7 +15,7 @@ const app = document.getElementById("app");
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
-            <IndexRedirect to="/playground"></IndexRedirect>
+            <IndexRedirect to="playground"></IndexRedirect>
             <Route path="playground" component={Playground}></Route>
             <Route path="profile" component={Profile}></Route>
             <Route path="create" component={Create}></Route>

@@ -1,5 +1,4 @@
 import React from 'react';
-import 'masonry-layout';
 
 export default class CreateLudoList extends React.Component {
     constructor() {

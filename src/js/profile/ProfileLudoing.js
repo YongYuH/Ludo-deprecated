@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../stylesheets/vendor/bootstrap/css/bootstrap-3.3.7.min.css';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 export default class ProfileLudoing extends React.Component {

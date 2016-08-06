@@ -9,8 +9,8 @@
     .profile-element {
         @extend .card;
         @extend %as_wide_as_parent;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
         // overwrite bootstrap style
         div.row {
             margin-left: 0px;

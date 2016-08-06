@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../stylesheets/vendor/bootstrap/css/bootstrap-3.3.7.min.css';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import avatar_photo from '../../images/profile-content/profile.png';
@@ -9,7 +10,6 @@ import pie_chart_red from '../../images/profile-content/pie_chart_red.png';
 export default class ProfileContent extends React.Component {
     render() {
         return (
-            /* TODO: Add webpack include bootstrap css */
             <Grid className="profile-content">
                 <Row>
                     <Col xs={6} className="profile-content-avatar">

@@ -1,8 +1,12 @@
 import React from 'react';
-import 'masonry-layout';
-// import { Grid, Row, Col } from 'react-bootstrap';
+import Masonry from 'react-masonry-component';
 
 import { rawFriendData } from './FriendData';
+
+const masonryOptions = {
+    itemSelector: ".grid-item--friend",
+    columnWidth: ".grid-item--friend",
+}
 
 export default class Friend extends React.Component {
     constructor() {
@@ -25,9 +29,10 @@ export default class Friend extends React.Component {
     render() {
         this.getFriendList();
         return (
-            <div className="grid" data-masonry='{ "itemSelector": ".grid-item--friend", "columnWidth": 185, "fitWidth": true }'>
+            <Masonry
+                options={masonryOptions}>
                 {this.state.friendList}
-            </div>
+            </Masonry>
         );
     }
 }
