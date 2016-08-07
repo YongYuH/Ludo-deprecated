@@ -1,0 +1,61 @@
+@import "helpers/variables";
+/* 
+variables
+    color
+        $g_background_gray
+*/
+@import "helpers/placeholders";
+@import "components/card";
+
+.profile-content {
+    @extend .card;
+    @extend %as_wide_as_parent;
+    @extend %text_center;
+}
+    .profile-content-avatar {
+        height: 230px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .profile-content-information {
+        height: 230px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+        .profile-content-information__element {
+            margin-bottom: 6px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(226, 229, 235);
+            background-color: $g_background_gray;
+        }
+    .profile-content-detail {
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-color: $g_background_gray;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        @extend %text_center;
+        font-size: 16px;
+        font-weight: 500;
+        // overwrite bootstrap style
+        div.col-xs-2 {
+            padding: 0;
+        }
+    }
+        .profile-content-detail__element {
+            @extend %clickable;
+        }
+    .profile-content-chart {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        padding-left: 5px;
+    }
