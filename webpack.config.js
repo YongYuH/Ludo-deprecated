@@ -2,10 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 var config = {
+    devServer: {
+        hot: true,    // <-- Enables HMR in webpack-dev-server and in libs running in the browser
+        contentBase: './build',
+    },
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
-        path.resolve(__dirname, 'src/js/app/routes.js')
+        'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
+        'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser
+        path.resolve(__dirname, 'src/js/app/routes.js')    // App's entry point
     ],
     module: {
         loaders: [
@@ -55,6 +59,7 @@ var config = {
         filename: 'bundle.js'
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),    // <-- To generate hot update chunks
         new webpack.NoErrorsPlugin()
     ]
 };
