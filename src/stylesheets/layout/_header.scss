@@ -1,0 +1,30 @@
+@import "helpers/placeholders";
+
+@import "components/header-logo";
+@import "components/header-schematic";
+@import "components/header-rate";
+@import "components/header-clock";
+
+// dimension
+$header_height: 112px;
+
+// depth
+$header_depth: 1;
+
+// border
+$header-border-bottom-width: 1px;
+
+// color
+$gray: rgba(182, 188, 193, 1);
+
+.header {
+    @extend %fixed;
+    top: 0;
+    z-index: $header_depth;
+    @extend %as_wide_as_parent;
+    height: $header_height;
+    border-bottom-style: solid;
+    border-bottom-width: $header-border-bottom-width;
+    border-bottom-color: $gray;
+    background-color: white;
+}

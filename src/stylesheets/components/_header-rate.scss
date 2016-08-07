@@ -1,0 +1,29 @@
+@import "helpers/placeholders";
+
+@import "components/header-win-rate";
+@import "components/header-finish-rate";
+
+// stroke
+$header-rate__circle_stroke-width: 10px;
+
+// color
+$header-rate__circle_color: white;
+
+// typograghy
+$header-rate__number_font-size: 15px;
+
+.header-rate {
+    @extend %absolute;
+    @extend %top;
+    @extend %right;
+    @extend %as_tall_as_parent;
+}
+    .header-rate__circle {
+        fill: $header-rate__circle_color;
+        stroke-width: $header-rate__circle_stroke-width;
+    }
+    .header-rate__number {
+        color: black;
+        @extend %text_center;
+        font-size: $header-rate__number_font-size;
+    }
