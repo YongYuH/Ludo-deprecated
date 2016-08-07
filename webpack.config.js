@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 var config = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
+        // 'webpack-dev-server/client?http://localhost:8080',
+        // 'webpack/hot/only-dev-server',
         path.resolve(__dirname, 'src/js/app/routes.js')
     ],
     module: {
@@ -13,7 +13,8 @@ var config = {
                 test: /\.js?$/,
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'src'),
-                loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+                // loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+                loaders: [ 'babel?presets[]=es2015,presets[]=react' ]
             },
             {
                 test: /\.css$/,
