@@ -8,7 +8,7 @@ var config = {
     },
     entry: [
         'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
-        'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser
+        'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
         path.resolve(__dirname, 'src/js/app/routes.js')    // App's entry point
     ],
     module: {
@@ -21,7 +21,7 @@ var config = {
             },
             {
                 test: /\.css$/,
-                loader: 'style!css'
+                loader: 'style!css'    // <-- short for 'style-loader!css-loader'  (works right-to-left) 
             },
             {
               test: /\.scss$/,
