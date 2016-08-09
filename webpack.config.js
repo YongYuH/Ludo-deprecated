@@ -23,7 +23,9 @@ const common = {
     entry: {
         // 'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
         // 'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
+        // bootstrap: PATHS.bootstrap,
         routes: PATHS.routes,    // App's entry point
+        // style: PATHS.style,
         vendor: Object.keys(pkg.dependencies)
     },
     module: {
