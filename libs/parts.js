@@ -41,6 +41,23 @@ exports.devServer = function(options) {
     };
 }
 
+
+exports.extractBundle = function(options) {
+    const entry = {};
+    entry[options.name] = options.entries;
+
+    return {
+        // Define an entry point needed for splitting.
+        entry: entry,
+        plugins: [
+            // Extract bundle and manifest files. Manifest is needed for reliable caching.
+            new webpack.optimize.CommonsChunkPlugin({
+                names: [options.name, 'manifest']
+            })
+        ]
+    };
+}
+
 exports.minify = function() {
     return {
         plugins: [
@@ -57,7 +74,7 @@ exports.minify = function() {
                   // Drop `console` statements
                   drop_console: true
                 },
-                
+
                 // Mangling specific options
                 mangle: {
                   // Don't mangle $
@@ -84,6 +101,17 @@ exports.setupCSS = function(paths) {
             ]
         }
     };
+}
+
+exports.setFreeVariable = function(key, value) {
+  const env = {};
+  env[key] = JSON.stringify(value);
+
+  return {
+    plugins: [
+      new webpack.DefinePlugin(env)
+    ]
+  };
 }
 
 exports.setupSCSS = function(paths) {

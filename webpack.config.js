@@ -1,9 +1,10 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack'); 
 const merge = require('webpack-merge');
-const validate = require('webpack-validator');
 const parts = require('./libs/parts');
+const path = require('path');
+const pkg = require('./package.json');
+const webpack = require('webpack'); 
+const validate = require('webpack-validator');
 
 const PATHS = {
     build: path.resolve(__dirname, 'build'),
@@ -19,18 +20,19 @@ const common = {
     // },
     // Entry accepts a path or an object of entries.
     // We'll be using the latter form given it's convenient with more complex configurations.
-    entry: [
+    entry: {
         // 'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
         // 'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
-        PATHS.routes    // App's entry point
-    ],
+        routes: PATHS.routes,    // App's entry point
+        vendor: Object.key(pkg.dependencies)
+    },
     module: {
         loaders: [
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'src'),
-                loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+                loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=react' ]
             },
             // {
             //     test: /\.css$/,
@@ -88,6 +90,14 @@ switch(process.env.npm_lifecycle_event) {
         {
             devtool: 'source-map'
         },
+        parts.extractBundle({
+            name: 'vendor',
+            entries: ['react']
+        }),
+        parts.setFreeVariable(
+            'process.env.NODE_ENV',
+            'production'
+        ),
         parts.minify(),
         parts.setupCSS(PATHS.bootstrap),
         parts.setupSCSS(PATHS.style)
