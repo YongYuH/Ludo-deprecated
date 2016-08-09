@@ -24,7 +24,7 @@ const common = {
         // 'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
         // 'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
         routes: PATHS.routes,    // App's entry point
-        vendor: Object.key(pkg.dependencies)
+        vendor: Object.keys(pkg.dependencies)
     },
     module: {
         loaders: [
@@ -45,33 +45,39 @@ const common = {
             // },
             {
                 test: /\.(png|jpg|gif)$/,
+                include: path.join(__dirname, 'src'),
                 loader: 'url-loader?limit=100000'
             },
             { 
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                include: path.join(__dirname, 'src'), 
                 loader: "file" 
             },
             { 
-                test: /\.(woff|woff2)$/, 
+                test: /\.(woff|woff2)$/,
+                include: path.join(__dirname, 'src'), 
                 loader:"url?prefix=font/&limit=5000"
             },
             { 
-                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                include: path.join(__dirname, 'src'), 
                 loader: "url?limit=10000&mimetype=application/octet-stream"
             },
             { 
-                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                include: path.join(__dirname, 'src'), 
                 loader: "url?limit=10000&mimetype=image/svg+xml"
             },
             {
                 test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+                include: path.join(__dirname, 'src'),
                 loader: 'imports?define=>false&this=>window'
             }
         ]
     },
     output: {
         path: PATHS.build,
-        filename: 'bundle.js'
+        filename: '[name].[chunkhash].js'
     },
     plugins: [
         // new webpack.HotModuleReplacementPlugin(),    // <-- To generate hot update chunks
@@ -88,8 +94,15 @@ switch(process.env.npm_lifecycle_event) {
     config = merge(
         common, 
         {
-            devtool: 'source-map'
+            devtool: 'source-map',
+            output: {
+                path: PATHS.build,
+                filename: '[name].[chunkhash].js',
+                // This is used for require.ensure. The setup will work without but this is useful to set.
+                chunkFilename: '[chunkhash].js'
+            }
         },
+        parts.clean(PATHS.build),
         parts.extractBundle({
             name: 'vendor',
             entries: ['react']
