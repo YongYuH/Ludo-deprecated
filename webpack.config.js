@@ -107,13 +107,13 @@ switch(process.env.npm_lifecycle_event) {
             name: 'vendor',
             entries: ['react']
         }),
+        parts.extractCSS(PATHS.bootstrap),
+        parts.extractSCSS(PATHS.style),
         parts.setFreeVariable(
             'process.env.NODE_ENV',
             'production'
         ),
-        parts.minify(),
-        parts.setupCSS(PATHS.bootstrap),
-        parts.setupSCSS(PATHS.style)
+        parts.minify()
     );
     break;
   default:
