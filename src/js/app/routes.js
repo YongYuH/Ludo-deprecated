@@ -10,6 +10,10 @@ import Friend from '../friend/Friend';
 
 import '../../stylesheets/main.scss';
 
+const div = document.createElement("div");
+div.setAttribute("id", "app");
+document.body.appendChild(div);
+
 const app = document.getElementById("app");
 
 ReactDOM.render(

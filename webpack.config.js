@@ -1,15 +1,28 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack'); 
+const merge = require('webpack-merge');
+const validate = require('webpack-validator');
+const parts = require('./libs/parts');
 
-var config = {
-    devServer: {
-        hot: true,    // <-- Enables HMR in webpack-dev-server and in libs running in the browser
-        contentBase: './build',
-    },
+const PATHS = {
+    build: path.resolve(__dirname, 'build'),
+    bootstrap: path.resolve(__dirname, 'src', 'stylesheets', 'vendor', 'bootstrap', 'css', 'bootstrap-3.3.7.min.css'),
+    routes: path.resolve(__dirname, 'src', 'js', 'app', 'routes.js'),
+    style: path.resolve(__dirname, 'src', 'stylesheets', 'main.scss'),
+};
+
+const common = {
+    // devServer: {
+    //     hot: true,    // <-- Enables HMR in webpack-dev-server and in libs running in the browser
+    //     contentBase: './build',
+    // },
+    // Entry accepts a path or an object of entries.
+    // We'll be using the latter form given it's convenient with more complex configurations.
     entry: [
         'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
         'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
-        path.resolve(__dirname, 'src/js/app/routes.js')    // App's entry point
+        PATHS.routes    // App's entry point
     ],
     module: {
         loaders: [
@@ -19,15 +32,15 @@ var config = {
                 include: path.join(__dirname, 'src'),
                 loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
             },
-            {
-                test: /\.css$/,
-                loader: 'style!css'    // <-- short for 'style-loader!css-loader'  (works right-to-left) 
-            },
-            {
-              test: /\.scss$/,
-              include: path.join(__dirname, 'src/stylesheets'),
-              loaders: ["style", "css", "sass"]
-            },
+            // {
+            //     test: /\.css$/,
+            //     loader: 'style!css'    // <-- short for 'style-loader!css-loader'  (works right-to-left) 
+            // },
+            // {
+            //   test: /\.scss$/,
+            //   include: path.join(__dirname, 'src/stylesheets'),
+            //   loaders: ["style", "css", "sass"]
+            // },
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=100000'
@@ -55,13 +68,34 @@ var config = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: PATHS.build,
         filename: 'bundle.js'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),    // <-- To generate hot update chunks
+        new HtmlWebpackPlugin({ title: 'Ludo' }),
         new webpack.NoErrorsPlugin()
     ]
 };
 
-module.exports = config;
+var config;
+
+// Detect how npm is run and branch based on that
+switch(process.env.npm_lifecycle_event) {
+  case 'build':
+    config = merge(common, {});
+    break;
+  default:
+    config = merge(
+        common,
+        parts.devServer({
+            // Customize host/port here if needed
+            host: process.env.HOST,
+            port: process.env.PORT
+        }),
+        parts.setupCSS(PATHS.bootstrap),
+        parts.setupSCSS(PATHS.style)
+    );
+}
+
+module.exports = validate(config);
