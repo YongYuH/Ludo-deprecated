@@ -21,6 +21,10 @@ exports.devServer = function(options) {
             host: options.host, // Defaults to `localhost`
             port: options.port // Defaults to 8080
         },
+        entry: [
+            'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
+            'webpack/hot/only-dev-server'    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
+        ],
         plugins: [
             // Enable multi-pass compilation for enhanced performance
             // in larger projects. Good default.
@@ -34,6 +38,18 @@ exports.devServer = function(options) {
             // Poll using interval (in ms, accepts boolean too)
             poll: 1000
         }
+    };
+}
+
+exports.minify = function() {
+    return {
+        plugins: [
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false
+                }
+            })
+        ]
     };
 }
 

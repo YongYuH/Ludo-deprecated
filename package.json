@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack-dev-server --devtool eval --progress --colors"
+    "build": "webpack --progress",
+    "dev": "webpack-dev-server --progress"
   },
   "repository": {
     "type": "git",

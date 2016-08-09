@@ -20,8 +20,8 @@ const common = {
     // Entry accepts a path or an object of entries.
     // We'll be using the latter form given it's convenient with more complex configurations.
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
-        'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
+        // 'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
+        // 'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
         PATHS.routes    // App's entry point
     ],
     module: {
@@ -72,7 +72,7 @@ const common = {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),    // <-- To generate hot update chunks
+        // new webpack.HotModuleReplacementPlugin(),    // <-- To generate hot update chunks
         new HtmlWebpackPlugin({ title: 'Ludo' }),
         new webpack.NoErrorsPlugin()
     ]
@@ -83,11 +83,22 @@ var config;
 // Detect how npm is run and branch based on that
 switch(process.env.npm_lifecycle_event) {
   case 'build':
-    config = merge(common, {});
+    config = merge(
+        common, 
+        {
+            devtool: 'source-map'
+        },
+        parts.minify(),
+        parts.setupCSS(PATHS.bootstrap),
+        parts.setupSCSS(PATHS.style)
+    );
     break;
   default:
     config = merge(
         common,
+        {
+            devtool: 'source-map'
+        },
         parts.devServer({
             // Customize host/port here if needed
             host: process.env.HOST,
