@@ -69,7 +69,9 @@ switch(process.env.npm_lifecycle_event) {
         common,
         {
             devtool: 'source-map'
-        }
+        },
+        parts.setupCSS(PATHS.bootstrap),
+        parts.setupSCSS(PATHS.style)
     );
     break;
   default:
