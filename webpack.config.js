@@ -13,15 +13,7 @@ const PATHS = {
 };
 
 const common = {
-    // devServer: {
-    //     hot: true,    // <-- Enables HMR in webpack-dev-server and in libs running in the browser
-    //     contentBase: './build',
-    // },
-    // Entry accepts a path or an object of entries.
-    // We'll be using the latter form given it's convenient with more complex configurations.
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',    // <-- Enables websocket connection (needs url and port)
-        'webpack/hot/only-dev-server',    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
         PATHS.routes    // App's entry point
     ],
     module: {
@@ -32,15 +24,6 @@ const common = {
                 include: path.join(__dirname, 'src'),
                 loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
             },
-            // {
-            //     test: /\.css$/,
-            //     loader: 'style!css'    // <-- short for 'style-loader!css-loader'  (works right-to-left) 
-            // },
-            // {
-            //   test: /\.scss$/,
-            //   include: path.join(__dirname, 'src/stylesheets'),
-            //   loaders: ["style", "css", "sass"]
-            // },
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=100000'
@@ -72,7 +55,6 @@ const common = {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),    // <-- To generate hot update chunks
         new HtmlWebpackPlugin({ title: 'Ludo' }),
         new webpack.NoErrorsPlugin()
     ]
