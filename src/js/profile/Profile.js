@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../stylesheets/vendor/bootstrap/css/bootstrap-3.3.7.min.css';
+import { Grid, Row, Col } from 'react-bootstrap';
 import Masonry from 'react-masonry-component';
 
 import ProfileContent from './ProfileContent';
