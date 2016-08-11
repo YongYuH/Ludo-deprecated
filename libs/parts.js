@@ -1,4 +1,5 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 exports.clean = function(path) {
@@ -60,6 +61,55 @@ exports.extractBundle = function(options) {
             new webpack.optimize.CommonsChunkPlugin({
                 names: [options.name, 'manifest']
             })
+        ]
+    };
+}
+
+// exports.extractCSS = function(paths) {
+//     return {
+//         module: {
+//             loaders: [
+//                 // Extract CSS during build
+//                 {
+//                     test: /\.css$/,
+//                     loader: ExtractTextPlugin.extract('style', 'css'),
+//                     include: paths
+//                 }
+//             ]
+//         },
+//         plugins: [
+//             // Output extracted CSS to a file
+//             new ExtractTextPlugin('stylesheets/bootstrap.[chunkhash].css')
+//         ]
+//     };
+// }
+
+exports.extractCSS = function(paths) {
+    return {
+        module: {
+            loaders: [
+                // Extract CSS during build
+                {
+                    test: /\.css$/,
+                    loader: ExtractTextPlugin.extract(
+                        'style',
+                        'css'
+                    ),
+                    include: paths
+                },
+                {
+                    test: /\.scss$/,
+                    loader: ExtractTextPlugin.extract(
+                        'style',
+                        'css!sass'
+                    ),
+                    include: paths
+                }
+            ]
+        },
+        plugins: [
+            // Output extracted CSS to a file
+            new ExtractTextPlugin('stylesheets/[name].[chunkhash].css', {allChunks: false})
         ]
     };
 }

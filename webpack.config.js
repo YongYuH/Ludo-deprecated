@@ -8,10 +8,11 @@ const parts = require('./libs/parts');
 
 const PATHS = {
     build: path.resolve(__dirname, 'build'),
-    bootstrap: path.resolve(__dirname, 'src', 'stylesheets', 'vendor', 'bootstrap', 'css', 'bootstrap-3.3.7.min.css'),
+    bootstrapcss: path.resolve(__dirname, 'src', 'stylesheets', 'vendor', 'bootstrap', 'css', 'bootstrap-3.3.7.min.css'),
+    mainscss: path.resolve(__dirname, 'src', 'stylesheets', 'main.scss'),
     routes: path.resolve(__dirname, 'src', 'js', 'app', 'routes.js'),
     src: path.resolve(__dirname, 'src'),
-    style: path.resolve(__dirname, 'src', 'stylesheets', 'main.scss'),
+    stylesheets: path.resolve(__dirname, 'src', 'stylesheets')
 };
 
 const common = {
@@ -93,8 +94,8 @@ switch(process.env.npm_lifecycle_event) {
             name: 'vendor'
         }),
         parts.minify(),
-        parts.setupCSS(PATHS.bootstrap),
-        parts.setupSCSS(PATHS.style)
+        // parts.extractCSS(PATHS.bootstrapcss),
+        parts.extractCSS(PATHS.stylesheets)
     );
     break;
   default:
@@ -108,8 +109,8 @@ switch(process.env.npm_lifecycle_event) {
             host: process.env.HOST,
             port: process.env.PORT
         }),
-        parts.setupCSS(PATHS.bootstrap),
-        parts.setupSCSS(PATHS.style)
+        parts.setupCSS(PATHS.bootstrapcss),
+        parts.setupSCSS(PATHS.mainscss)
     );
 }
 
