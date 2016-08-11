@@ -71,6 +71,10 @@ switch(process.env.npm_lifecycle_event) {
             devtool: 'source-map'
         },
         parts.minify(),
+        parts.setFreeVariable(
+            'process.env.NODE_ENV',
+            'production'
+        ),
         parts.setupCSS(PATHS.bootstrap),
         parts.setupSCSS(PATHS.style)
     );
