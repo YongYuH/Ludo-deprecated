@@ -1,4 +1,5 @@
 const path = require('path');
+const pkg = require('./package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack'); 
 const merge = require('webpack-merge');
@@ -15,7 +16,8 @@ const PATHS = {
 
 const common = {
     entry: {
-        app: [PATHS.routes]
+        app: [PATHS.routes],
+        vendor: Object.keys(pkg.dependencies)
     },
     module: {
         loaders: [
@@ -81,8 +83,7 @@ switch(process.env.npm_lifecycle_event) {
             'production'
         ),
         parts.extractBundle({
-            name: 'vendor',
-            entries: ['react']
+            name: 'vendor'
         }),
         parts.minify(),
         parts.setupCSS(PATHS.bootstrap),
