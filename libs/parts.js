@@ -3,9 +3,8 @@ const webpack = require('webpack');
 exports.devServer = function(options) {
     return {
         devServer: {
-            // Enable history API fallback so HTML5 History API based
-            // routing works. This is a good default that will come
-            // in handy in more complicated setups.
+            // Enable history API fallback so HTML5 History API based routing works. 
+            // This is a good default that will come in handy in more complicated setups.
             historyApiFallback: true,
 
             // Unlike the cli flag, this doesn't set HotModuleReplacementPlugin!
@@ -22,8 +21,7 @@ exports.devServer = function(options) {
             port: options.port // Defaults to 8080
         },
         plugins: [
-            // Enable multi-pass compilation for enhanced performance
-            // in larger projects. Good default.
+            // Enable multi-pass compilation for enhanced performance in larger projects. Good default.
             new webpack.HotModuleReplacementPlugin({
                 multiStep: true
             })
@@ -34,6 +32,22 @@ exports.devServer = function(options) {
             // Poll using interval (in ms, accepts boolean too)
             poll: 1000
         }
+    };
+}
+
+exports.extractBundle = function(options) {
+    const entry = {};
+    entry[options.name] = options.entries;
+
+    return {
+        // Define an entry point needed for splitting.
+        entry: entry,
+        plugins: [
+            // Extract bundle and manifest files. Manifest is needed for reliable caching.
+            new webpack.optimize.CommonsChunkPlugin({
+                names: [options.name, 'manifest']
+            })
+        ]
     };
 }
 

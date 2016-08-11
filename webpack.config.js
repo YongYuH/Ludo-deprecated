@@ -14,9 +14,9 @@ const PATHS = {
 };
 
 const common = {
-    entry: [
-        PATHS.routes    // App's entry point
-    ],
+    entry: {
+        app: [PATHS.routes]
+    },
     module: {
         loaders: [
             {
@@ -76,11 +76,15 @@ switch(process.env.npm_lifecycle_event) {
         {
             devtool: 'source-map'
         },
-        parts.minify(),
         parts.setFreeVariable(
             'process.env.NODE_ENV',
             'production'
         ),
+        parts.extractBundle({
+            name: 'vendor',
+            entries: ['react']
+        }),
+        parts.minify(),
         parts.setupCSS(PATHS.bootstrap),
         parts.setupSCSS(PATHS.style)
     );
