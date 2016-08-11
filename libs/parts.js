@@ -65,9 +65,6 @@ exports.minify = function() {
 
                     // Don't mangle function names
                     keep_fnames: true
-                },
-                mangleProperties: {
-                    ignore_quoted: true
                 }
             })
         ]
