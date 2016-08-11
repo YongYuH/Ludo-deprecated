@@ -9,6 +9,7 @@ const PATHS = {
     build: path.resolve(__dirname, 'build'),
     bootstrap: path.resolve(__dirname, 'src', 'stylesheets', 'vendor', 'bootstrap', 'css', 'bootstrap-3.3.7.min.css'),
     routes: path.resolve(__dirname, 'src', 'js', 'app', 'routes.js'),
+    src: path.resolve(__dirname, 'src'),
     style: path.resolve(__dirname, 'src', 'stylesheets', 'main.scss'),
 };
 
@@ -20,33 +21,38 @@ const common = {
         loaders: [
             {
                 test: /\.js?$/,
-                exclude: /node_modules/,
-                include: path.join(__dirname, 'src'),
-                loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react' ]
+                loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=react' ],
+                include: PATHS.src
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=100000'
+                loader: 'url-loader?limit=100000',
+                include: PATHS.src
             },
             { 
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
-                loader: "file" 
+                loader: "file",
+                include: PATHS.src
             },
             { 
                 test: /\.(woff|woff2)$/, 
-                loader:"url?prefix=font/&limit=5000"
+                loader:"url?prefix=font/&limit=5000",
+                include: PATHS.src
             },
             { 
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-                loader: "url?limit=10000&mimetype=application/octet-stream"
+                loader: "url?limit=10000&mimetype=application/octet-stream",
+                include: PATHS.src
             },
             { 
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
-                loader: "url?limit=10000&mimetype=image/svg+xml"
+                loader: "url?limit=10000&mimetype=image/svg+xml",
+                include: PATHS.src
             },
             {
                 test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
-                loader: 'imports?define=>false&this=>window'
+                loader: 'imports?define=>false&this=>window',
+                include: PATHS.src
             }
         ]
     },
