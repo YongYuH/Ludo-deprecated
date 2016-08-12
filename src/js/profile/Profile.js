@@ -1,6 +1,4 @@
 import React from 'react';
-import '../../stylesheets/vendor/bootstrap/css/bootstrap-3.3.7.min.css';
-import { Grid, Row, Col } from 'react-bootstrap';
 import Masonry from 'react-masonry-component';
 
 import ProfileContent from './ProfileContent';
@@ -16,7 +14,8 @@ import { rawStatisticData } from './StatisticData';
 
 const masonryOptions = {
     itemSelector: ".grid-item--half",
-    columnWidth: ".grid-item--half"
+    columnWidth: ".grid-item--half",
+    fitWidth: true
 }
 
 export default class Profile extends React.Component {
@@ -24,6 +23,7 @@ export default class Profile extends React.Component {
         return ( 
             <div className="profile">
                 <Masonry
+                    className="grid"
                     options={masonryOptions}>
                     <div className="grid-item--half">
                         <ProfileContent />

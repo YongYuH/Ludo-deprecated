@@ -65,25 +65,6 @@ exports.extractBundle = function(options) {
     };
 }
 
-// exports.extractCSS = function(paths) {
-//     return {
-//         module: {
-//             loaders: [
-//                 // Extract CSS during build
-//                 {
-//                     test: /\.css$/,
-//                     loader: ExtractTextPlugin.extract('style', 'css'),
-//                     include: paths
-//                 }
-//             ]
-//         },
-//         plugins: [
-//             // Output extracted CSS to a file
-//             new ExtractTextPlugin('stylesheets/bootstrap.[chunkhash].css')
-//         ]
-//     };
-// }
-
 exports.extractCSS = function(paths) {
     return {
         module: {
@@ -109,6 +90,7 @@ exports.extractCSS = function(paths) {
         },
         plugins: [
             // Output extracted CSS to a file
+            new webpack.optimize.CommonsChunkPlugin("commons", "commons.js"),
             new ExtractTextPlugin('stylesheets/[name].[chunkhash].css', {allChunks: false})
         ]
     };

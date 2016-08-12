@@ -12,12 +12,14 @@ const PATHS = {
     mainscss: path.resolve(__dirname, 'src', 'stylesheets', 'main.scss'),
     routes: path.resolve(__dirname, 'src', 'js', 'app', 'routes.js'),
     src: path.resolve(__dirname, 'src'),
-    stylesheets: path.resolve(__dirname, 'src', 'stylesheets')
+    style: path.resolve(__dirname, 'src', 'stylesheets')
 };
 
 const common = {
     entry: {
         app: [PATHS.routes],
+        bootstrapcss: [PATHS.bootstrapcss],
+        mainscss: [PATHS.mainscss],
         vendor: Object.keys(pkg.dependencies)
     },
     module: {
@@ -25,7 +27,8 @@ const common = {
             {
                 test: /\.js?$/,
                 loaders: [ 'react-hot', 'babel?presets[]=es2015,presets[]=react' ],
-                include: PATHS.src
+                include: PATHS.src,
+                exclude: /node_modules/
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -94,8 +97,8 @@ switch(process.env.npm_lifecycle_event) {
             name: 'vendor'
         }),
         parts.minify(),
-        // parts.extractCSS(PATHS.bootstrapcss),
-        parts.extractCSS(PATHS.stylesheets)
+        parts.extractCSS(PATHS.bootstrapcss),
+        parts.extractCSS(PATHS.mainscss)
     );
     break;
   default:

@@ -10,19 +10,22 @@ variables
 .profile-content {
     @extend .card;
     @extend %as_wide_as_parent;
-    @extend %text_center;
 }
-    .profile-content-avatar {
-        height: 230px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
     .profile-content-information {
-        height: 230px;
-        padding-right: 20px;
-        padding-top: 20px;
+        @extend %relative;
     }
-        .profile-content-information__element {
+        .profile-content-information-avatar {
+            display: inline-block;
+            @extend %half_width_of_parent;
+            height: 230px;
+        }
+    .profile-content-information-tag {
+        display: inline-block;
+        @extend %half_width_of_parent;
+        height: 230px;
+        line-height: 1;
+    }
+        .profile-content-information-tag__element {
             margin-bottom: 6px;
             padding-top: 5px;
             padding-bottom: 5px;
@@ -31,6 +34,7 @@ variables
             border-width: 1px;
             border-color: rgb(226, 229, 235);
             background-color: $g_background_gray;
+            @extend %text_center;
         }
     .profile-content-detail {
         border-top-style: solid;
@@ -42,16 +46,20 @@ variables
         padding-right: 10px;
         padding-top: 15px;
         padding-bottom: 10px;
-        @extend %text_center;
         font-size: 16px;
         font-weight: 500;
-        // overwrite bootstrap style
-        div.col-xs-2 {
-            padding: 0;
-        }
     }
         .profile-content-detail__element {
+            display: inline-block;
+            margin-right: 10px;
+            margin-left: 10px;
             @extend %clickable;
+        }
+        .profile-content-detail__element--last {
+            @extend .profile-content-detail__element;
+            float: right;
+            margin-right: 0;
+            margin-left: 0;
         }
     .profile-content-chart {
         padding-top: 20px;
@@ -59,3 +67,7 @@ variables
         padding-right: 15px;
         padding-left: 5px;
     }
+        .profile-content-chart__element {
+            display: inline-block;
+            width: 33%;
+        }

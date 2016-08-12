@@ -16,13 +16,13 @@
             @extend %background_img_setting;
         }
     .create-content-information {
-        @extend .profile-content-information;
+        @extend .profile-content-information-tag;
     }
         .create-content-information__element {
-            @extend .profile-content-information__element;
+            @extend .profile-content-information-tag__element;
         }
     .create-content-invitation {
-        @extend .profile-content-information__element;
+        @extend .profile-content-information-tag__element;
         margin-bottom: 0px;
     }
     .create-content-calendar {

@@ -10,12 +10,14 @@ import { rawLudoData } from '../playground/LudoData';
 const masonryOptions = {
     itemSelector: ".grid-item",
     columnWidth: 280,
+    fitWidth: true
 }
 
 export default class Create extends React.Component {
     render() {
         return (
-            <Masonry 
+            <Masonry
+                className="grid"
                 options={masonryOptions}>
                 <CreateContent />
                 <CreateLudoList data={rawLudoData}/>

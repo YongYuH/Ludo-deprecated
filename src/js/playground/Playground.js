@@ -10,7 +10,7 @@ import { rawLudoData } from './LudoData';
 const masonryOptions = {
     itemSelector: ".grid-item",
     columnWidth: ".grid-item",
-    fitWidth: true,
+    fitWidth: true
 }
 
 export default class Playground extends React.Component {
