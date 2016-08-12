@@ -1,9 +1,9 @@
 import React from 'react';
 
-import avatar_photo from '../../images/profile-content/profile.png';
-import pie_chart_blue from '../../images/profile-content/pie_chart_blue.png';
-import pie_chart_yellow from '../../images/profile-content/pie_chart_yellow.png';
-import pie_chart_red from '../../images/profile-content/pie_chart_red.png';
+import avatar_photo from '../../images/profile/profile-content/profile.png';
+import pie_chart_blue from '../../images/profile/profile-content/pie_chart_blue.png';
+import pie_chart_yellow from '../../images/profile/profile-content/pie_chart_yellow.png';
+import pie_chart_red from '../../images/profile/profile-content/pie_chart_red.png';
 
 export default class ProfileContent extends React.Component {
     render() {
@@ -15,11 +15,13 @@ export default class ProfileContent extends React.Component {
                             <img src={avatar_photo} />
                         </div>
                     </div>
-                    <div className="profile-content-information-tag">
-                        <div className="profile-content-information-tag__element">name</div>
-                        <div className="profile-content-information-tag__element">birth</div>
-                        <div className="profile-content-information-tag__element">language</div>
-                        <div className="profile-content-information-tag__element">habit</div>
+                    <div className="profile-content-information-tag-div">
+                        <div className="profile-content-information-tag">
+                            <div className="profile-content-information-tag__element">name</div>
+                            <div className="profile-content-information-tag__element">birth</div>
+                            <div className="profile-content-information-tag__element">language</div>
+                            <div className="profile-content-information-tag__element">habit</div>
+                        </div>
                     </div>
                 </div>
                 <div className="profile-content-detail">
