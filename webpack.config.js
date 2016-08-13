@@ -95,7 +95,8 @@ switch(process.env.npm_lifecycle_event) {
             name: 'vendor'
         }),
         parts.minify(),
-        parts.extractCSS(PATHS.mainscss)
+        parts.extractCSS(PATHS.mainscss),
+        parts.purifyCSS([PATHS.mainscss])
     );
     break;
   default:

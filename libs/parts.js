@@ -1,13 +1,13 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const webpack = require('webpack');
 
 exports.clean = function(path) {
     return {
         plugins: [
             new CleanWebpackPlugin([path], {
-                // Without `root` CleanWebpackPlugin won't point to our
-                // project and will fail to work.
+                // Without `root` CleanWebpackPlugin won't point to our project and will fail to work.
                 root: process.cwd()
             })
         ]
@@ -128,6 +128,19 @@ exports.minify = function() {
             })
         ]
     };
+}
+
+exports.purifyCSS = function(paths) {
+    return {
+        plugins: [
+            new PurifyCSSPlugin({
+                basePath: process.cwd(),
+                // `paths` is used to point PurifyCSS to files not visible to Webpack. 
+                // You can pass glob patterns to it.
+                paths: paths
+            }),
+        ]
+    }
 }
 
 exports.setFreeVariable = function(key, value) {
