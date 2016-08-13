@@ -20,8 +20,8 @@ export default class Playground extends React.Component {
                 className="playground"
                 options={masonryOptions}>
                 <QuickStart />
-                <PlaygroundLudoList data={rawLudoData} />
                 <Search />
+                <PlaygroundLudoList data={rawLudoData} />
             </Masonry>
         );
     }

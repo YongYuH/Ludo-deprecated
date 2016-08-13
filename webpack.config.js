@@ -1,14 +1,13 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const parts = require('./libs/parts');
 const path = require('path');
 const pkg = require('./package.json');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack'); 
-const merge = require('webpack-merge');
 const validate = require('webpack-validator');
-const parts = require('./libs/parts');
+const webpack = require('webpack'); 
 
 const PATHS = {
     build: path.resolve(__dirname, 'build'),
-    bootstrapcss: path.resolve(__dirname, 'src', 'stylesheets', 'vendor', 'bootstrap', 'css', 'bootstrap-3.3.7.min.css'),
     mainscss: path.resolve(__dirname, 'src', 'stylesheets', 'main.scss'),
     routes: path.resolve(__dirname, 'src', 'js', 'app', 'routes.js'),
     src: path.resolve(__dirname, 'src'),
@@ -18,7 +17,6 @@ const PATHS = {
 const common = {
     entry: {
         app: [PATHS.routes],
-        bootstrapcss: [PATHS.bootstrapcss],
         mainscss: [PATHS.mainscss],
         vendor: Object.keys(pkg.dependencies)
     },
@@ -97,7 +95,6 @@ switch(process.env.npm_lifecycle_event) {
             name: 'vendor'
         }),
         parts.minify(),
-        parts.extractCSS(PATHS.bootstrapcss),
         parts.extractCSS(PATHS.mainscss)
     );
     break;
@@ -112,7 +109,6 @@ switch(process.env.npm_lifecycle_event) {
             host: process.env.HOST,
             port: process.env.PORT
         }),
-        parts.setupCSS(PATHS.bootstrapcss),
         parts.setupSCSS(PATHS.mainscss)
     );
 }

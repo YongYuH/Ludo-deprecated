@@ -23,9 +23,6 @@ $card_background-color: white;
         width: $grid-item_width;
         padding: $grid-item_padding;
     }
-    .grid-item--addPaddingWidth {
-        width: 280px;
-    }
     .grid-item--half {
         @extend .grid-item;
         width: $grid-item--half_width;

@@ -9,7 +9,7 @@ import { rawLudoData } from '../playground/LudoData';
 /* LUDO TODO: make columnWidth a variable */
 const masonryOptions = {
     itemSelector: ".grid-item",
-    columnWidth: 270,
+    columnWidth: 290,
     fitWidth: true
 }
 

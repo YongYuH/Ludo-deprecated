@@ -20,9 +20,9 @@ variables
             display: inline-block;
             @extend %relative;
             @extend %half_width_of_parent;
+            height: 220px;
         }
             .profile-content-information-tag {
-                display: inline-block;
                 @extend %as_wide_as_parent;
                 line-height: 1;
                 @extend %absolute;
@@ -75,4 +75,5 @@ variables
             .profile-content-chart__element {
                 display: inline-block;
                 width: 33%;
+                @extend %text_center;
             }

@@ -12,9 +12,10 @@ import { rawHistoryData } from './HistoryData';
 import { rawPrizeData } from './PrizeData';
 import { rawStatisticData } from './StatisticData';
 
+/* LUDO TODO: make columnWidth a variable */
 const masonryOptions = {
     itemSelector: ".grid-item--half",
-    columnWidth: ".grid-item--half",
+    columnWidth: 580,
     fitWidth: true
 }
 

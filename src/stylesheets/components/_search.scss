@@ -1,55 +1,34 @@
 @import "helpers/mixins";
-@import "helpers/variables";
 @import "helpers/placeholders";
 
 @import "components/card";
 
-// position
-$search__icon_left: -50px;
-$search__title_top: 9px;
-$search__title_right: 45px;
-$search__textfield_top: 32px;
-$search__textfield_right: 40px;
-
-// dimension
-$search_width: 230px;
-$search_height: 70px;
-$search__textfield_width: 92px;
-
-// border
-$search_border-radius: 5px;
-
-// background
-$search__icon_background-size: 20%;
-
 .search {
-    @extend %fixed;
     @extend %closer;
-    @extend %bottom;
     @extend .card;
-    // right: $right-sidebar_width;
-    width: $search_width;
-    height: $search_height;
-
-    .search__icon {
-        @extend %absolute;
-        left: $search__icon_left;
-        @extend %as_wide_as_parent;
-        @extend %as_tall_as_parent;
-        @include background_img_content(auto_start_icon);
-        @extend %background_img_setting;
-        background-size: $search__icon_background-size;
-    } 
-    .search__title {
-        @extend %absolute;
-        top: $search__title_top;
-        right: $search__title_right;
-    }
-    .search__textfield {
-        @extend %absolute;
-        top: $search__textfield_top;
-        right: $search__textfield_right;
-        width: $search__textfield_width;
-        background-color: $gray;
-    }
+    height: 45px;
 }
+    .search-icon {
+        display: inline-block;
+        width: 20%;
+        @extend %as_tall_as_parent;
+        @extend %text_center;
+        vertical-align: top;
+        @extend %relative;
+    }
+        .search-icon__icon {
+            height: 100%;
+            @include background_img_content(auto_start_icon);
+            @extend %background_img_setting;
+        }
+    .search-text {
+        @extend .search-icon;
+        width: 80%;
+    }
+        .search-text__title {
+            @extend %as_wide_as_parent;
+        }
+        .search-text__textfield {
+            width: 80%;
+            background-color: $gray;
+        }
