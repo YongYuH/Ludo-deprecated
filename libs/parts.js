@@ -2,8 +2,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.clean = function(path) {
     return {
@@ -89,28 +87,6 @@ exports.extractCSS = function(paths) {
                 // Extract CSS during build
                 {
                     test: /\.css$/,
-<<<<<<< HEAD
-                    loader: ExtractTextPlugin.extract('style', 'css'),
-                    include: paths
-                }
-            ]
-        },
-        plugins: [
-            // Output extracted CSS to a file
-            new ExtractTextPlugin('[name].[chunkhash].css')
-        ]
-    };
-}
-
-exports.extractSCSS = function(paths) {
-    return {
-        module: {
-            loaders: [
-                // Extract CSS during build
-                {
-                    test: /\.scss$/,
-                    loader: ExtractTextPlugin.extract('style', 'css!sass'),
-=======
                     loader: ExtractTextPlugin.extract(
                         'style',
                         'css'
@@ -123,19 +99,14 @@ exports.extractSCSS = function(paths) {
                         'style',
                         'css!sass'
                     ),
->>>>>>> master
                     include: paths
                 }
             ]
         },
         plugins: [
             // Output extracted CSS to a file
-<<<<<<< HEAD
-            new ExtractTextPlugin('[name].[chunkhash].css')
-=======
             new webpack.optimize.CommonsChunkPlugin("commons", "commons.js"),
             new ExtractTextPlugin('stylesheets/[name].[chunkhash].css', {allChunks: false})
->>>>>>> master
         ]
     };
 }
@@ -152,28 +123,14 @@ exports.minify = function() {
 
                 // Compression specific options
                 compress: {
-<<<<<<< HEAD
-                  warnings: false,
-                  // Drop `console` statements
-                  drop_console: true
-=======
                     warnings: false,
 
                     // Drop `console` statements
                     drop_console: true
->>>>>>> master
                 },
 
                 // Mangling specific options
                 mangle: {
-<<<<<<< HEAD
-                  // Don't mangle $
-                  except: ['$'],
-                  // Don't care about IE8
-                  screw_ie8 : true,
-                  // Don't mangle function names
-                  keep_fnames: true
-=======
                     // Don't mangle $
                     except: ['$'],
 
@@ -182,15 +139,12 @@ exports.minify = function() {
 
                     // Don't mangle function names
                     keep_fnames: true
->>>>>>> master
                 }
             })
         ]
     };
 }
 
-<<<<<<< HEAD
-=======
 exports.purifyCSS = function(paths) {
     return {
         plugins: [
@@ -215,7 +169,6 @@ exports.setFreeVariable = function(key, value) {
     };
 }
 
->>>>>>> master
 exports.setupCSS = function(paths) {
     return {
         module: {
