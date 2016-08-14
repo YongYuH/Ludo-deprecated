@@ -1,19 +1,13 @@
 @import "helpers/placeholders";
 
-// position
-$header-clock_top: 30px;
-$header-clock_right: 25px;
-
-// dimension
-$header-clock__icon_height: 50px;
-
 .header-clock {
     @extend %absolute;
-    top: $header-clock_top;
-    right: $header-clock_right;
+    right: 25px;
     @extend %as_tall_as_parent;
+    display: flex;
+    align-items: center;
 }
     .header-clock__icon {
         @extend %relative;
-        height: $header-clock__icon_height;
+        height: 70px;
     }
