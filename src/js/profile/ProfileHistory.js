@@ -1,6 +1,4 @@
 import React from 'react';
-import '../../stylesheets/vendor/bootstrap/css/bootstrap-3.3.7.min.css';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 export default class ProfileHistory extends React.Component {
     constructor() {
@@ -19,14 +17,12 @@ export default class ProfileHistory extends React.Component {
                 condition_color = 'deuce';
             }
             return (
-                <Col className="profile-history__element" key={index} xs={2}>
-                <span className="profile-history__condition">
-                    <span className={`${condition_color}`}>
+                <div className="profile-history__element" key={index}>
+                    <span className={`profile-history__condition ${condition_color}`}>
                         {data.condition}
                     </span>
-                </span>
                     <img className="profile-history__icon" src={data.img} />
-                </Col>
+                </div>
             );
         });
     }
@@ -34,12 +30,10 @@ export default class ProfileHistory extends React.Component {
     render() {
         this.getHistoryData();
         return (
-            <Grid className="profile-element">
+            <div className="profile-element">
                 <div className="profile-element__title">History</div>
-                <Row>
-                    {this.state.history}
-                </Row>
-            </Grid>
+                {this.state.history}
+            </div>
         );
     }
 }

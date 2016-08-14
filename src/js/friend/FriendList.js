@@ -5,7 +5,8 @@ import { rawFriendData } from './FriendData';
 
 const masonryOptions = {
     itemSelector: ".grid-item--friend",
-    columnWidth: ".grid-item--friend",
+    columnWidth: 185,
+    fitWidth: true
 }
 
 export default class Friend extends React.Component {
@@ -30,6 +31,7 @@ export default class Friend extends React.Component {
         this.getFriendList();
         return (
             <Masonry
+                className="grid"
                 options={masonryOptions}>
                 {this.state.friendList}
             </Masonry>

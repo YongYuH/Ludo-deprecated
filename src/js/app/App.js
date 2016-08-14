@@ -38,5 +38,7 @@ const styles = {
         marginRight: `${rightSidebarWidth}px`,
         paddingRight: `${contentPaddingX}px`,
         paddingLeft: `${contentPaddingX}px`,
+        backgroundColor: 'rgb(232, 235, 237)',
+        fontFamily: ["Exo" , "Microsoft JhengHei"]
     }
 }

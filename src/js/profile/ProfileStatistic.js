@@ -1,6 +1,4 @@
 import React from 'react';
-import '../../stylesheets/vendor/bootstrap/css/bootstrap-3.3.7.min.css';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 export default class ProfileStatistic extends React.Component {
     constructor() {
@@ -11,9 +9,9 @@ export default class ProfileStatistic extends React.Component {
     getStatisticData() {
         this.state.statistic = this.props.data.map( (data, index) => {
             return (
-                <Col className="profile-statistic__element" key={index} xs={2}>
+                <div className="profile-statistic__element" key={index}>
                     <img className="profile-statistic__icon" src={data.value} />
-                </Col>
+                </div>
             );
         });
     }
@@ -21,12 +19,10 @@ export default class ProfileStatistic extends React.Component {
     render() {
         this.getStatisticData();
         return (
-            <Grid className="profile-element">
+            <div className="profile-element">
                 <div className="profile-element__title">Statistic</div>
-                <Row>
-                    {this.state.statistic}
-                </Row>
-            </Grid>
+                {this.state.statistic}
+            </div>
         );
     }
 }

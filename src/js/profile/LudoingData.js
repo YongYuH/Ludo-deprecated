@@ -1,22 +1,28 @@
+import atom from '../../images/profile/ludoing/atom.png';
+import carpentry from '../../images/profile/ludoing/carpentry.png';
+import orientation from '../../images/profile/ludoing/orientation.png';
+import pencil from '../../images/profile/ludoing/pencil.png';
+import soccer from '../../images/profile/ludoing/soccer.png';
+
 export const rawLudoingData = [
     { 
         "key": "soccer", 
-        "value": "./images/profile/ludoing/soccer.png" 
+        "value": soccer
     },
     { 
         "key": "orientation", 
-        "value": "./images/profile/ludoing/orientation.png" 
+        "value": orientation
     },
     { 
         "key": "pencil", 
-        "value": "./images/profile/ludoing/pencil.png" 
+        "value": pencil
     },
     { 
         "key": "carpentry", 
-        "value": "./images/profile/ludoing/carpentry.png" 
+        "value": carpentry
     },
     { 
         "key": "atom", 
-        "value": "./images/profile/ludoing/atom.png" 
+        "value": atom
     },
 ];

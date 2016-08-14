@@ -1,42 +1,51 @@
+import atom from '../../images/profile/history/atom.png';
+import carpentry from '../../images/profile/history/carpentry.png';
+import clock from '../../images/profile/history/clock.png';
+import high_school from '../../images/profile/history/high-school.png';
+import orientation from '../../images/profile/history/orientation.png';
+import pencil from '../../images/profile/history/pencil.png';
+import soccer from '../../images/profile/history/soccer.png';
+import violin from '../../images/profile/history/violin.png';
+
 export const rawHistoryData = [
     { 
         "key": "soccer", 
-        "img": "./images/profile/history/soccer.png" ,
+        "img": soccer,
         "condition": "W",
     },
     { 
         "key": "violin", 
-        "img": "./images/profile/history/violin.png",
+        "img": violin,
         "condition": "W",
     },
     { 
         "key": "pencil", 
-        "img": "./images/profile/history/pencil.png",
+        "img": pencil,
         "condition": "W",
     },
     { 
         "key": "high-school", 
-        "img": "./images/profile/history/high-school.png",
+        "img": high_school,
         "condition": "L",
     },
     { 
         "key": "clock", 
-        "img": "./images/profile/history/clock.png",
+        "img": clock,
         "condition": "W",
     },
     { 
         "key": "orientation", 
-        "img": "./images/profile/history/orientation.png",
+        "img": orientation,
         "condition": "L",
     },
     { 
         "key": "atom", 
-        "img": "./images/profile/history/atom.png",
+        "img": atom,
         "condition": "L",
     },
     { 
         "key": "carpentry", 
-        "img": "./images/profile/history/carpentry.png",
+        "img": carpentry,
         "condition": "L",
     },
 ];

@@ -9,19 +9,8 @@
     .profile-element {
         @extend .card;
         @extend %as_wide_as_parent;
-        // padding-top: 15px;
-        // padding-bottom: 15px;
-        // overwrite bootstrap style
-        div.row {
-            margin-left: 0px;
-            margin-right: 0px;
-        }
-        div.col-xs-2 {
-            padding: 0;
-        }
     }
         .profile-element__title {
             padding-bottom: 15px;
             font-size: 16px;
         }
-
