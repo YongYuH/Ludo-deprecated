@@ -6,7 +6,7 @@ $orange: rgb(255, 115, 20);
 .header-finish-rate {
     @extend %absolute;
     @extend %as_tall_as_parent;
-    right: 165px;
+    right: 195px;
 }
     .header-finish-rate__circle {
         stroke: $orange;

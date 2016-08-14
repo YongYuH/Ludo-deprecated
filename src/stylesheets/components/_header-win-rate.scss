@@ -6,7 +6,7 @@ $green: rgb(140, 200, 40);
 .header-win-rate {
     @extend %absolute;
     @extend %as_tall_as_parent;
-    right: 100px;
+    right: 110px;
 }
     .header-win-rate__circle {
         stroke: $green;
