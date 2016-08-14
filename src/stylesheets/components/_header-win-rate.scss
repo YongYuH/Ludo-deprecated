@@ -1,29 +1,21 @@
 @import "helpers/placeholders";
 
-// position
-$header-win-rate_right: 80px;
-$header-win-rate__number_top: 33%;
-$header-win-rate__number_left: 25%;
-
 // color
-$header-win-rate__circle_color: rgb(140, 200, 40);
-
-// typography
-$header-win-rate__text_font-size: 75%;
+$green: rgb(140, 200, 40);
 
 .header-win-rate {
     @extend %absolute;
     @extend %as_tall_as_parent;
-    right: $header-win-rate_right;
+    right: 100px;
 }
     .header-win-rate__circle {
-        stroke: $header-win-rate__circle_color;
+        stroke: $green;
     }
     .header-win-rate__text {
-        font-size: $header-win-rate__text_font-size;
+        font-size: 75%;
         @extend %text_center;
     }
     .header-win-rate__number {
-        top: $header-win-rate__number_top;
-        left: $header-win-rate__number_left;
+        top: 33%;
+        left: 25%;
     }

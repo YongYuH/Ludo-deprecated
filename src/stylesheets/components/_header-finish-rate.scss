@@ -1,29 +1,21 @@
 @import "helpers/placeholders";
 
-// position
-$header-finish-rate_right: 150px;
-$header-finish-rate__number_top: 25%;
-$header-finish-rate__number_left: 30%;
-
 // color
-$header-finish-rate__circle_color: rgb(255, 115, 20);
-
-// typography
-$header-finish-rate__text_font-size: 65%;
+$orange: rgb(255, 115, 20);
 
 .header-finish-rate {
     @extend %absolute;
     @extend %as_tall_as_parent;
-    right: $header-finish-rate_right;
+    right: 165px;
 }
     .header-finish-rate__circle {
-        stroke: $header-finish-rate__circle_color;
+        stroke: $orange;
     }
     .header-finish-rate__text {
-        font-size: $header-finish-rate__text_font-size;
+        font-size: 65%;
         @extend %text_center;
     }
     .header-finish-rate__number {
-        top: $header-finish-rate__number_top;
-        left: $header-finish-rate__number_left;
+        top: 25%;
+        left: 30%;
     }
