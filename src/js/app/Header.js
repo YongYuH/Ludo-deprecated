@@ -46,15 +46,6 @@ export default class Header extends React.Component {
         );
     }
 
-    getSchematicIcon() {
-        return (
-            <div className="header-schematic">
-                <div className="header-schematic__icon-text">Playground</div>
-                <div className="header-schematic__icon"></div>
-            </div>
-        );
-    }
-
     getWinRate() {
         return (
             <div className="header-win-rate">
@@ -74,7 +65,6 @@ export default class Header extends React.Component {
         return ( 
             <div className="header">
                 {this.getLogo()}
-                {this.getSchematicIcon()}
                 {this.getRate()}
                 {this.getClock()}
             </div>

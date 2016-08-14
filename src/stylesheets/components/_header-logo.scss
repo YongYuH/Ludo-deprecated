@@ -1,20 +1,13 @@
 @import "helpers/placeholders";
 
-// dimension 
-$header-Ludo-logo_width: 200px;
-$header_height: 112px;
-
-// margin
-$header-Ludo-logo__icon_margin_y: ($header_height - 71)/2;
-
 .header-Ludo-logo {
         @extend %absolute;
-        width: $header-Ludo-logo_width;
+        width: 350px;
         @extend %as_tall_as_parent;
 }
     .header-Ludo-logo__icon {
         @extend %relative;
         @extend %as_wide_as_parent;
-        margin-top: $header-Ludo-logo__icon_margin_y;
-        margin-bottom: $header-Ludo-logo__icon_margin_y;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }

@@ -19,7 +19,7 @@ export default class App extends React.Component {
 };
 
 const screenWidth = window.innerWidth;
-const headerHeight = 112;
+const headerHeight = 140;
 const rightSidebarWidth = 100;
 const cardWidth = 230;
 const cardPaddingX = 15;
