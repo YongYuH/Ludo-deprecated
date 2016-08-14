@@ -8,7 +8,7 @@ import Profile from '../profile/Profile';
 import Create from '../create/Create';
 import Friend from '../friend/Friend';
 
-import '../../stylesheets/main.scss';
+// import '../../stylesheets/main.scss';
 
 const div = document.createElement("div");
 div.setAttribute("id", "app");

@@ -1,3 +1,6 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -13,12 +16,22 @@ exports.clean = function(path) {
     };
 }
 
+exports.clean = function(path) {
+    return {
+        plugins: [
+            new CleanWebpackPlugin([path], {
+                // Without `root` CleanWebpackPlugin won't point to our project and will fail to work.
+                root: process.cwd()
+            })
+        ]
+    };
+}
+
 exports.devServer = function(options) {
     return {
         devServer: {
-            // Enable history API fallback so HTML5 History API based
-            // routing works. This is a good default that will come
-            // in handy in more complicated setups.
+            // Enable history API fallback so HTML5 History API based routing works. 
+            // This is a good default that will come in handy in more complicated setups.
             historyApiFallback: true,
 
             // Unlike the cli flag, this doesn't set HotModuleReplacementPlugin!
@@ -39,8 +52,7 @@ exports.devServer = function(options) {
             'webpack/hot/only-dev-server'    // <-- To perform HMR in the browser, doesn’t reload the browser upon syntax errors
         ],
         plugins: [
-            // Enable multi-pass compilation for enhanced performance
-            // in larger projects. Good default.
+            // Enable multi-pass compilation for enhanced performance in larger projects. Good default.
             new webpack.HotModuleReplacementPlugin({
                 multiStep: true
             })
@@ -77,6 +89,7 @@ exports.extractCSS = function(paths) {
                 // Extract CSS during build
                 {
                     test: /\.css$/,
+<<<<<<< HEAD
                     loader: ExtractTextPlugin.extract('style', 'css'),
                     include: paths
                 }
@@ -97,13 +110,32 @@ exports.extractSCSS = function(paths) {
                 {
                     test: /\.scss$/,
                     loader: ExtractTextPlugin.extract('style', 'css!sass'),
+=======
+                    loader: ExtractTextPlugin.extract(
+                        'style',
+                        'css'
+                    ),
+                    include: paths
+                },
+                {
+                    test: /\.scss$/,
+                    loader: ExtractTextPlugin.extract(
+                        'style',
+                        'css!sass'
+                    ),
+>>>>>>> master
                     include: paths
                 }
             ]
         },
         plugins: [
             // Output extracted CSS to a file
+<<<<<<< HEAD
             new ExtractTextPlugin('[name].[chunkhash].css')
+=======
+            new webpack.optimize.CommonsChunkPlugin("commons", "commons.js"),
+            new ExtractTextPlugin('stylesheets/[name].[chunkhash].css', {allChunks: false})
+>>>>>>> master
         ]
     };
 }
@@ -120,25 +152,70 @@ exports.minify = function() {
 
                 // Compression specific options
                 compress: {
+<<<<<<< HEAD
                   warnings: false,
                   // Drop `console` statements
                   drop_console: true
+=======
+                    warnings: false,
+
+                    // Drop `console` statements
+                    drop_console: true
+>>>>>>> master
                 },
 
                 // Mangling specific options
                 mangle: {
+<<<<<<< HEAD
                   // Don't mangle $
                   except: ['$'],
                   // Don't care about IE8
                   screw_ie8 : true,
                   // Don't mangle function names
                   keep_fnames: true
+=======
+                    // Don't mangle $
+                    except: ['$'],
+
+                    // Don't care about IE8
+                    screw_ie8 : true,
+
+                    // Don't mangle function names
+                    keep_fnames: true
+>>>>>>> master
                 }
             })
         ]
     };
 }
 
+<<<<<<< HEAD
+=======
+exports.purifyCSS = function(paths) {
+    return {
+        plugins: [
+            new PurifyCSSPlugin({
+                basePath: process.cwd(),
+                // `paths` is used to point PurifyCSS to files not visible to Webpack. 
+                // You can pass glob patterns to it.
+                paths: paths
+            }),
+        ]
+    }
+}
+
+exports.setFreeVariable = function(key, value) {
+    const env = {};
+    env[key] = JSON.stringify(value);
+
+    return {
+        plugins: [
+            new webpack.DefinePlugin(env)
+        ]
+    };
+}
+
+>>>>>>> master
 exports.setupCSS = function(paths) {
     return {
         module: {

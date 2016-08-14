@@ -2,10 +2,10 @@
 @import "helpers/placeholders";
 
 .profile-statistic__element {
-    width: 25%;
-    //height: 96px;
-    margin-left: 20px;
-    margin-right: 20px;
+    display: inline-block;
+    width: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
     @extend %text_center;
 }
     .profile-statistic__icon {

@@ -1,4 +1,8 @@
 .sass-cache/
 node_modules/
+<<<<<<< HEAD
 npm-debug.log
 build/
+=======
+stats.json
+>>>>>>> master
