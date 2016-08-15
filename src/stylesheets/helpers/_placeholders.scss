@@ -1,5 +1,11 @@
 @import "helpers/variables";
 
+// display
+%flex { 
+    display: -webkit-flex;
+    display: flex;
+} 
+
 // position
 %fixed { position: fixed; }
 %absolute { position: absolute; }

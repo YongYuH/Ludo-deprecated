@@ -1,17 +1,6 @@
 import React from "react";
 
-import imageLogo from '../../images/Ludo_logo.png';
-import clockIcon from '../../images/clock_icon.jpg';
-
-export default class Header extends React.Component {
-    getClock() {
-        return (
-            <div className="header-clock">
-                <img className="header-clock__icon" src={clockIcon}/>
-            </div>
-        );
-    }
-
+export default class HeaderRate extends React.Component {
     getFinishRate() {
         return (
             <div className="header-finish-rate">
@@ -23,25 +12,6 @@ export default class Header extends React.Component {
                     <text className="header-finish-rate__text" x="15%" y="45%"></text>
                     <text className="header-rate__number header-finish-rate__number" x="30%" y="66%"></text>
                 </svg>
-            </div>
-        );
-    }
-
-    getLogo() {
-        return (
-            <a href="">
-                <div className="header-Ludo-logo">
-                    <img src={imageLogo} className="header-Ludo-logo__icon"/>
-                </div>
-            </a>
-        );
-    }
-
-    getRate() {
-        return (
-            <div className="header-rate">
-                {this.getFinishRate()}
-                {this.getWinRate()}
             </div>
         );
     }
@@ -62,12 +32,11 @@ export default class Header extends React.Component {
     }
 
     render() {
-        return ( 
-            <div className="header">
-                {this.getLogo()}
-                {this.getRate()}
-                {this.getClock()}
+        return (
+            <div className="header-rate">
+                {this.getFinishRate()}
+                {this.getWinRate()}
             </div>
         );
     }
-};
+}

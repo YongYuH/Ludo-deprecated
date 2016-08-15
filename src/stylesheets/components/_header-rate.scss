@@ -4,14 +4,14 @@
 @import "components/header-finish-rate";
 
 .header-rate {
-    @extend %absolute;
-    @extend %top;
-    @extend %right;
+    @extend %flex;
     @extend %as_tall_as_parent;
+    margin-left: 10px;
+    margin-right: 5px;
 }
     .header-rate__circle {
         fill: white;
-        stroke-width: 20px;
+        stroke-width: 15px;
     }
     .header-rate__number {
         color: black;

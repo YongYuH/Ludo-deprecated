@@ -1,7 +1,7 @@
 @import "helpers/placeholders";
 
 .header-Ludo-logo {
-        @extend %absolute;
+        @extend %relative;
         width: 350px;
         @extend %as_tall_as_parent;
 }

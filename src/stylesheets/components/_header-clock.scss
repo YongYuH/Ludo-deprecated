@@ -1,11 +1,11 @@
 @import "helpers/placeholders";
 
 .header-clock {
-    @extend %absolute;
-    right: 25px;
     @extend %as_tall_as_parent;
-    display: flex;
+    @extend %flex;
     align-items: center;
+    margin-right: 30px;
+    margin-left: 5px;
 }
     .header-clock__icon {
         @extend %relative;
