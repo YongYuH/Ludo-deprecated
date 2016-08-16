@@ -1,5 +1,6 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
+import axios from 'axios';
 
 const masonryOptions = {
     itemSelector: ".grid-item",
@@ -9,28 +10,50 @@ const masonryOptions = {
 export default class PlaygroundLudoList extends React.Component {
     constructor() {
         super();
-        this.state = { cardContent:[] }
+        this.state = { 
+            cardContent: []
+        }
+    }
+
+    componentDidMount() {
+        this.getDifferentCardContent();
+    }
+
+    componentWillUnmount() {
+        this.serverRequest.abort();
     }
 
     getDifferentCardContent() {
-        this.state.cardContent = this.props.data.map( (data, index) => {
-            return (
-                <div className="grid-item" key={index}>
-                    <div className="card">
-                        <div>{data.launchDate}</div>
-                        <div>{data.type}</div>
-                        <div>{data.duration}</div>
-                        <div>{data.introduction}</div>
-                        <div>{data.condition}</div>
-                        <div>{data.marblesNumber}</div>
-                    </div>
-                </div>
-            )
-        });
+        const _this = this;
+
+        this.serverRequest = axios.get('LudoData.json')
+            .then(function (response) {
+                console.log(response)
+                const mapCardContent = response.data.map( (data, index) => {
+                        return (
+                            <div className="grid-item" key={index}>
+                                <div className="card">
+                                    <div>{data.launchDate}</div>
+                                    <div>{data.type}</div>
+                                    <div>{data.duration}</div>
+                                    <div>{data.introduction}</div>
+                                    <div>{data.condition}</div>
+                                    <div>{data.marblesNumber}</div>
+                                </div>
+                            </div>
+                        )
+                    });
+
+                _this.setState({
+                    cardContent: mapCardContent
+                });
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
     }
 
     render() {
-        this.getDifferentCardContent();
         return (
             <div>
                 {this.state.cardContent}
@@ -38,12 +61,3 @@ export default class PlaygroundLudoList extends React.Component {
         );
     }
 }
-
-// PlaygroundLudoList.propTypes = {
-//     launchDate: React.PropTypes.string.isRequired,
-//     type: React.PropTypes.number.isRequired,
-//     duration: React.PropTypes.number.isRequired,
-//     introduction: React.PropTypes.string.isRequired,
-//     condition: React.PropTypes.string.isRequired,
-//     marblesNumber: React.PropTypes.number.isRequired,
-// };

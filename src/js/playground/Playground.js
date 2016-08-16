@@ -5,8 +5,6 @@ import QuickStart from './QuickStart';
 import PlaygroundLudoList from './PlaygroundLudoList';
 import Search from '../app/Search';
 
-import { rawLudoData } from './LudoData';
-
 const masonryOptions = {
     itemSelector: ".grid-item",
     columnWidth: ".grid-item",
@@ -18,10 +16,11 @@ export default class Playground extends React.Component {
         return (
             <Masonry
                 className="playground"
-                options={masonryOptions}>
+                options={masonryOptions}
+                updateOnEachImageLoad={true}>
                 <QuickStart />
                 <Search />
-                <PlaygroundLudoList data={rawLudoData} />
+                <PlaygroundLudoList />
             </Masonry>
         );
     }
